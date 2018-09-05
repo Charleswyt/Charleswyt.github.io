@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE, C"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Charles_wyt"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="wav音频格式解析"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE, C"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Home"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttps://i.imgur.com/klm5KIH.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttps://i.imgur.com/klm5KIH.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>wav音频格式解析 - Home</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://i.imgur.com/q06Ip0T.png"/>
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Blog of Charles_wyt</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Blog
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/charleswyt">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://i.imgur.com/klm5KIH.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>wav音频格式解析</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-02
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Audio-wav/">#Audio, wav</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。<br>RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。<br>WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE, Chunk, Format Chunk, Fact Chunk(可选), LIST Chunk(可选), Data Chunk。</p>
+<h2 id="具体见下图："><a href="#具体见下图：" class="headerlink" title="具体见下图："></a>具体见下图：</h2><p>|               RIFF WAVE Chunk                |<br>|               ID  = ‘RIFF’                   |</p>
+<h2 id="RiffType-‘WAVE’"><a href="#RiffType-‘WAVE’" class="headerlink" title="|               RiffType = ‘WAVE’              |"></a>|               RiffType = ‘WAVE’              |</h2><p>|               Format Chunk                   |</p>
+<h2 id="ID-‘fmt-‘"><a href="#ID-‘fmt-‘" class="headerlink" title="|                ID = ‘fmt ‘                   |"></a>|                ID = ‘fmt ‘                   |</h2><p>|            Fact Chunk(optional)              |</p>
+<h2 id="ID-‘fact’"><a href="#ID-‘fact’" class="headerlink" title="|                 ID = ‘fact’                  |"></a>|                 ID = ‘fact’                  |</h2><p>|             LIST Chunk(optional)             |</p>
+<h2 id="ID-‘LIST’"><a href="#ID-‘LIST’" class="headerlink" title="|                 ID = ‘LIST’                  |"></a>|                 ID = ‘LIST’                  |</h2><p>|                 Data Chunk                   |</p>
+<h2 id="ID-‘data’"><a href="#ID-‘data’" class="headerlink" title="|                 ID = ‘data’                  |"></a>|                 ID = ‘data’                  |</h2><pre><code>        图1   Wav格式包含Chunk示例
+其中除了Fact Chunk和LIST Chunk外，其他三个Chunk是必须的。每个Chunk有各自的ID，位于Chunk最开始位置，作为标示，而且均为4个字节。
+</code></pre><p>并且紧跟在ID后面的是Chunk大小（去除ID和Size所占的字节数后剩下的其他字节数目），4个字节表示，低字节表示数值低位，高字节表示数值高位。<br>下面具体介绍各个Chunk内容。</p>
+<h1 id="1-RIFF-WAVE-Chunk"><a href="#1-RIFF-WAVE-Chunk" class="headerlink" title="1.RIFF WAVE Chunk"></a>1.RIFF WAVE Chunk</h1><pre><code>|       |所占字节数|  具体内容   |
+==================================
+| ID    |  4 Bytes |   &apos;RIFF&apos;    |
+----------------------------------
+| Size  |  4 Bytes |             |
+----------------------------------
+| Type  |  4 Bytes |   &apos;WAVE&apos;    |
+----------------------------------
+        图2  RIFF WAVE Chunk
+以&apos;FIFF&apos;作为标示，然后紧跟着为size字段，该size是整个wav文件大小减去ID和Size所占用的字节数，即FileLen - 8 = Size。
+</code></pre><p>然后是Type字段，为’WAVE’，表示是wav文件。</p>
+<p>结构定义如下：<br>struct RiffHeader<br>{<br>    char  szRiffID[4];        // ‘R’,’I’,’F’,’F’<br>    DWORD dwRiffSize;<br>    char  szRiffFormat[4];    // ‘W’,’A’,’V’,’E’<br>};</p>
+<h1 id="2-Format-Chunk"><a href="#2-Format-Chunk" class="headerlink" title="2.Format Chunk"></a>2.Format Chunk</h1><pre><code>|               |   字节数  |              具体内容                |
+====================================================================
+| ID            |  4 Bytes  |   &apos;fmt &apos;                             |
+--------------------------------------------------------------------
+| Size          |  4 Bytes  | 数值为16或18，18则最后又附加信息     |
+--------------------------------------------------------------------  ----
+| FormatTag     |  2 Bytes  | 编码方式，一般为0x0001               |     |
+--------------------------------------------------------------------     |
+| Channels      |  2 Bytes  | 声道数目，1--单声道；2--双声道       |     |
+--------------------------------------------------------------------     |
+| SamplesPerSec |  4 Bytes  | 采样频率                             |     |
+--------------------------------------------------------------------     |
+| AvgBytesPerSec|  4 Bytes  | 每秒所需字节数                       |     |===&gt; WAVE_FORMAT
+--------------------------------------------------------------------     |
+| BlockAlign    |  2 Bytes  | 数据块对齐单位(每个采样需要的字节数) |     |
+--------------------------------------------------------------------     |
+| BitsPerSample |  2 Bytes  | 每个采样需要的bit数                  |     |
+--------------------------------------------------------------------     |
+|               |  2 Bytes  | 附加信息（可选，通过Size来判断有无） |     |
+--------------------------------------------------------------------  ----
+                        图3  Format Chunk
+以&apos;fmt &apos;作为标示。一般情况下Size为16，此时最后附加信息没有；如果为18则最后多了2个字节的附加信息。
+</code></pre><p>主要由一些软件制成的wav格式中含有该2个字节的附加信息。</p>
+<p>结构定义如下：<br>struct WAVE_FORMAT<br>{<br>    WORD wFormatTag;<br>    WORD wChannels;<br>    DWORD dwSamplesPerSec;<br>    DWORD dwAvgBytesPerSec;<br>    WORD wBlockAlign;<br>    WORD wBitsPerSample;<br>};</p>
+<p>struct FormatChunk<br>{<br>    char  szFmtID[4]; // ‘f’,’m’,’t’,’ ‘<br>    DWORD  dwFmtSize;<br>    WAVE_FORMAT wavFormat;<br>};</p>
+<h1 id="3-Fact-Chunk"><a href="#3-Fact-Chunk" class="headerlink" title="3.Fact Chunk"></a>3.Fact Chunk</h1><pre><code>|       |所占字节数|  具体内容   |
+==================================
+| ID    |  4 Bytes |   &apos;fact&apos;    |
+----------------------------------
+| Size  |  4 Bytes |   数值为4   |
+----------------------------------
+| data  |  4 Bytes |             |
+----------------------------------
+        图4  Fact Chunk
+Fact Chunk是可选字段，一般当wav文件由某些软件转化而成，则包含该Chunk。
+</code></pre><p>结构定义如下：<br>struct FactChunk<br>{<br>    char  szFactID[4]; // ‘f’,’a’,’c’,’t’<br>    DWORD  dwFactSize;<br>};</p>
+<h1 id="4-LIST-Chunk"><a href="#4-LIST-Chunk" class="headerlink" title="4.LIST Chunk"></a>4.LIST Chunk</h1><pre><code>|       |所占字节数|  具体内容   |
+==================================
+| ID    |  4 Bytes |   &apos;LIST&apos;    |
+----------------------------------
+| Size  |  4 Bytes |             |
+----------------------------------
+| Type  |  4 Bytes |    &apos;INFO&apos;   |
+----------------------------------
+|         Sub LIST Chunk         |
+----------------------------------
+</code></pre><h1 id="Sub-LIST-Chunk"><a href="#Sub-LIST-Chunk" class="headerlink" title="Sub LIST Chunk"></a>Sub LIST Chunk</h1><pre><code>|       |所占字节数|  具体内容   |
+==================================
+| ID    |  4 Bytes |   &apos;ISFT&apos;    |
+----------------------------------
+| Size  |  4 Bytes |             |
+----------------------------------
+| Data  | 14 Bytes |             |
+----------------------------------
+</code></pre><p>结构定义如下：<br>struct LIST_SUBCHUNK<br>{<br>    char  ChunkID[4];        // ‘I’ ‘S’ ‘F’ ‘T’<br>    DWORD dwSubChunkSize;<br>    char  ListData[14];<br>};</p>
+<p>struct ListChunk<br>{<br>    char  szLishID[4];        // ‘L’ ‘I’ ‘S’ ‘T’<br>    DWORD dwListSize;        // List Chunk的大小<br>    char  ChunkType[4];        // ‘I’ ‘N’ ‘F’ ‘O’<br>    LIST_SUBCHUNK subChunk;    // 上面定义的结构体，大小为22字节<br>};</p>
+<h1 id="5-Data-Chunk"><a href="#5-Data-Chunk" class="headerlink" title="5.Data Chunk"></a>5.Data Chunk</h1><pre><code>|       |所占字节数|  具体内容   |
+==================================
+| ID    |  4 Bytes |   &apos;data&apos;    |
+----------------------------------
+| Size  |  4 Bytes |             |
+----------------------------------
+| data  |          |             |
+----------------------------------
+         图5 Data Chunk  
+Data Chunk是真正保存wav数据的地方，以&apos;data&apos;作为该Chunk的标示。然后是
+</code></pre><p>数据的大小。紧接着就是wav数据。根据Format Chunk中的声道数以及采样bit数，</p>
+<h2 id="wav数据的bit位置可以分成以下几种形式："><a href="#wav数据的bit位置可以分成以下几种形式：" class="headerlink" title="wav数据的bit位置可以分成以下几种形式："></a>wav数据的bit位置可以分成以下几种形式：</h2><pre><code>|   单声道  |    取样1    |    取样2    |    取样3    |    取样4    |
+|           |--------------------------------------------------------
+|  8bit量化 |    声道0    |    声道0    |    声道0    |    声道0    |
+---------------------------------------------------------------------
+|   双声道  |          取样1            |           取样2           |
+|           |--------------------------------------------------------
+|  8bit量化 |  声道0(左)  |  声道1(右)  |  声道0(左)  |  声道1(右)  |
+---------------------------------------------------------------------
+|           |          取样1            |           取样2           |
+|   单声道  |--------------------------------------------------------
+| 16bit量化 |    声道0    |  声道0      |    声道0    |  声道0      |
+|           | (低位字节)  | (高位字节)  | (低位字节)  | (高位字节)  |
+---------------------------------------------------------------------
+|           |                         取样1                         |
+|   双声道  |--------------------------------------------------------
+| 16bit量化 |  声道0(左)  |  声道0(左)  |  声道1(右)  |  声道1(右)  |
+|           | (低位字节)  | (高位字节)  | (低位字节)  | (高位字节)  |
+---------------------------------------------------------------------
+                     图6 wav数据bit位置安排方式
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:charles_wyt@126.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Charles_wyt<br></p>
+                <!-- <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p> -->
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -13,6 +13,13 @@
     
 
     
+        <meta name="description" content="运行库的简要介绍使用Visual Studio (VS)进行Windos下的C/C++开发时，会存在运行库(C/C++ -&amp;gt; 代码生成-&amp;gt; 运行库)的选择，分别为：多线程(/MT)，多线程调试(/MTd)，多线程DLL(/MD)，多线程调试DLL(/MDd)。
+
+
+
+编译选项
+静态链接的"/>
+    
 
     <!--Author-->
     
@@ -21,10 +28,17 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Home"/>
+        <meta property="og:title" content="关于Windows编程中编译选项的说明"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="运行库的简要介绍使用Visual Studio (VS)进行Windos下的C/C++开发时，会存在运行库(C/C++ -&amp;gt; 代码生成-&amp;gt; 运行库)的选择，分别为：多线程(/MT)，多线程调试(/MTd)，多线程DLL(/MD)，多线程调试DLL(/MDd)。
+
+
+
+编译选项
+静态链接的"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +46,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +65,7 @@
 
     <!-- Title -->
     
-    <title>Home</title>
+    <title>关于Windows编程中编译选项的说明 - Home</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -140,96 +154,123 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('https://i.imgur.com/klm5KIH.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Home</h1>
-                    <hr class="small">
-                    <span class="subheading">Welcome to my blog</span>
+                <div class="post-heading">
+                    <h1>关于Windows编程中编译选项的说明</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-05
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2018/09/05/关于Windows编程中编译选项的说明/">
-        <h2 class="post-title">
-            关于Windows编程中编译选项的说明
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-09-05
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/09/02/wav音频格式解析/">
-        <h2 class="post-title">
-            wav音频格式解析
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-09-02
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/09/02/git常用命令/">
-        <h2 class="post-title">
-            git常用命令
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-09-02
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/08/30/Win10-Hexo-github搭建个人博客/">
-        <h2 class="post-title">
-            Win10 + Hexo + github搭建个人博客
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-08-30
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/C-C-windows/">#C/C++, windows</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
 
-            <ul class="pager">
-    
-    
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="运行库的简要介绍"><a href="#运行库的简要介绍" class="headerlink" title="运行库的简要介绍"></a>运行库的简要介绍</h1><p>使用Visual Studio (VS)进行Windos下的C/C++开发时，会存在运行库(C/C++ -&gt; 代码生成-&gt; 运行库)的选择，分别为：多线程(/MT)，多线程调试(/MTd)，多线程DLL(/MD)，多线程调试DLL(/MDd)。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">编译选项</th>
+<th style="text-align:center">静态链接的lib</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> /MD</td>
+<td style="text-align:center">MSVCRT.lib</td>
+<td style="text-align:center">多线程、<strong>Release</strong>、<strong>DLL</strong>版本的运行时库</td>
+</tr>
+<tr>
+<td style="text-align:center"> /MT</td>
+<td style="text-align:center">LIBCMT.lib</td>
+<td style="text-align:center">多线程、<strong>Release</strong>版本的运行时库</td>
+</tr>
+<tr>
+<td style="text-align:center"> /MDd</td>
+<td style="text-align:center">MSVCRTD.lib</td>
+<td style="text-align:center">多线程、<strong>Debug</strong>、<strong>DLL</strong>版本的运行时库</td>
+</tr>
+<tr>
+<td style="text-align:center"> /MTd</td>
+<td style="text-align:center">LIBCMTD.lib</td>
+<td style="text-align:center">多线程、<strong>Debug</strong>版本的运行时库</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>/MT：Multithread Static Version，表示多线程静态的版本，编译器将LIBCMT.lib安置在OBJ文件中，使链接器使用LIBCMT.lib处理外部符号</li>
+<li>/MD：Multithread and DLL Specific Version，表示多线程DLL版本，编译器将MSVCRT.lib安置在OBJ文件中，其连接到DLL的方式是静态链接，实际工作的库为MSVCR80.DLL</li>
 </ul>
+<p>综上所述：</p>
+<ul>
+<li>静态运行时库：LIBCMT.lib</li>
+<li>动态运行时库：MSVCRT.lib + MSVCR80.DLL</li>
+</ul>
+<h1 id="运行库的选择"><a href="#运行库的选择" class="headerlink" title="运行库的选择"></a>运行库的选择</h1><ul>
+<li>选择/MD<ul>
+<li>程序不需要静态链接运行时的库，可以减小软件的大小</li>
+<li>所有的模块都采用/MD，使用的是同一个堆，不存在A堆申请，B堆释放的问题</li>
+</ul>
+</li>
+<li>选择/MT<ul>
+<li>有些系统可能没有程序所需要版本的运行库时，程序必须把运行时库静态链接上<h2 id="注：多个模块，必须使用相同类型的运行时库，不可以混合使用"><a href="#注：多个模块，必须使用相同类型的运行时库，不可以混合使用" class="headerlink" title="注：多个模块，必须使用相同类型的运行时库，不可以混合使用"></a>注：多个模块，必须使用相同类型的运行时库，不可以混合使用</h2></li>
+</ul>
+</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
