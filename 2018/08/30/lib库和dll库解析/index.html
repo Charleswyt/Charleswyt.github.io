@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="静态库lib和动态dll的区别LIB库和DLL库介绍
+LIB库&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;函数和数据被编译进一个二进制文件(*.lib文件)。在使用静态库的情况下，编译链接可执行文件时，链接器从库中复制这些函数和数据并把它们和应用程序的其他模块组合起来创建最终的可执行文件(*.e"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Charles_wyt"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="lib库和dll库辨析"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="静态库lib和动态dll的区别LIB库和DLL库介绍
+LIB库&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;函数和数据被编译进一个二进制文件(*.lib文件)。在使用静态库的情况下，编译链接可执行文件时，链接器从库中复制这些函数和数据并把它们和应用程序的其他模块组合起来创建最终的可执行文件(*.e"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Home"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttps://i.imgur.com/klm5KIH.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttps://i.imgur.com/klm5KIH.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>lib库和dll库辨析 - Home</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://i.imgur.com/q06Ip0T.png"/>
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Blog of Charles_wyt</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Blog
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/charleswyt">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://i.imgur.com/klm5KIH.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>lib库和dll库辨析</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-30
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/C-C/">#C/C++</a> <a href="/tags/lib/">#lib</a> <a href="/tags/dll/">#dll</a> <a href="/tags/windows/">#windows</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="静态库lib和动态dll的区别"><a href="#静态库lib和动态dll的区别" class="headerlink" title="静态库lib和动态dll的区别"></a>静态库lib和动态dll的区别</h2><h3 id="LIB库和DLL库介绍"><a href="#LIB库和DLL库介绍" class="headerlink" title="LIB库和DLL库介绍"></a>LIB库和DLL库介绍</h3><ul>
+<li><strong>LIB库</strong><br>&ensp;&ensp;&ensp;&ensp;函数和数据被编译进一个二进制文件(*.lib文件)。在使用静态库的情况下，编译链接可执行文件时，链接器从库中复制这些函数和数据并把它们和应用程序的其他模块组合起来创建最终的可执行文件(*.exe文件)。当发布产品时，只需要发布这个可执行文件，并不需要发布被使用的静态库。</li>
+<li><strong>DLL库</strong><br>&ensp;&ensp;&ensp;&ensp;在使用动态库的时候，编译后往往提供两个文件：一个引入库(*.lib)文件(也称“导入库文件”)和一个DLL(.dll)文件。<br>&ensp;&ensp;&ensp;&ensp;虽然引入库的后缀名也是“lib”，但是动态库的引入库文件和静态库文件有着本质的区别。对一个DLL文件来说，其引入库文件(*.lib)包含该DLL导出的函数和变量的符号名(可以看作是函数和变量的声明)，而*.dll文件包含该DLL实际的函数和数据。在使用动态库的情况下，编译链接可执行文件时，只需要链接该DLL的引入库文件，该DLL中的函数代码和数据并不可复制到可执行文件，直到可执行程序运行时，才去加载所需的DLL，将该DLL映射到进程的地址空间中，然后访问DLL中导出的函数。因此，在发布产品时，除了发布可执行文件以外， 同时还需要发布该程序将要调用的动态链接库。<br>&ensp;&ensp;&ensp;&ensp;当EXE程序确实要调用这些DLL模块的情况下，系统才会将它们装载到内存空间中。这种方式不仅减少了EXE文件的大小和对内存空间的需求，而且使这些DLL模块可以同时被多个应用程序使用。如果DLL不在内存中，系统就将其加载到内存中。当链接Windows程序以产生一个可执行文件时，必须链接由编程环境提供的专门的“引入库(import library)”。这些引入库包含了动态链接库名称和所有Windows函数调用的引用信息。链接程序使用该信息在EXE文件中构造一个表，当加载程序时，Windows使用它将调用转换为Windows函数。</li>
+</ul>
+<h3 id="静态库LIB和引入库LIB的区别"><a href="#静态库LIB和引入库LIB的区别" class="headerlink" title="静态库LIB和引入库LIB的区别"></a>静态库LIB和引入库LIB的区别</h3><p>&ensp;&ensp;&ensp;&ensp;引入库和静态库的区别很大，他们实质是不一样的东西。静态库本身就包含了实际执行代码、符号表等等，而对于引入库而言，其实际的执行代码位于动态库中，引入库只包含了地址符号表等，确保程序找到对应函数的一些基本地址信息。但是引入库文件的引入方式和静态库一样，要在链接路径上添加找到这些.lib的路径。</p>
+<h3 id="动态库（Lib和DLL）和静态库Lib的区别"><a href="#动态库（Lib和DLL）和静态库Lib的区别" class="headerlink" title="动态库（Lib和DLL）和静态库Lib的区别"></a>动态库（Lib和DLL）和静态库Lib的区别</h3><ul>
+<li>静态链接库与动态链接库都是共享代码的方式，如果采用静态链接库，lib中的指令都全部被直接包含在最终生成的EXE文件中了，最终的可执行文件EXE文件会比较大。但是若使用DLL，该DLL不必被包含在最终EXE文件中，EXE文件执行时可以“动态”地引用和卸载这个与EXE独立的DLL文件。 </li>
+<li>静态链接库和动态链接库的另外一个区别在于静态链接库中不能再包含其他的动态链接库或者静态库，而在动态链接库中还可以再包含其他的动态或静态链接库。</li>
+</ul>
+<p>&ensp;&ensp;&ensp;&ensp;综上所述，静态链接库运行之前就加载了，而且一直存在直到关闭程序，动态DLL是在运行时再加载，不用一直占内存，dll模块内部更改了，是要替换dll即可，方便维护。 但是dll如果丢失或被误删，就无法运行了。</p>
+<h2 id="LIB库和DLL库的使用"><a href="#LIB库和DLL库的使用" class="headerlink" title="LIB库和DLL库的使用"></a>LIB库和DLL库的使用</h2><h3 id="动态dll的使用"><a href="#动态dll的使用" class="headerlink" title="动态dll的使用"></a>动态dll的使用</h3><p>&ensp;&ensp;&ensp;&ensp;动态链接库的使用需要库的开发者提供生成的.lib文件和.dll文件，或者只提供dll文件。使用时只能使用dll中导出的函数，未导出的函数只能在dll内部使用。<br>&ensp;&ensp;&ensp;&ensp;dll的调用有显示连接和隐式连接两种：隐式连接需要三个东西，分别是*.h头文件，lib库（动态的），dll库；显示连接只需要.dll文件即可。</p>
+<h4 id="隐式链接"><a href="#隐式链接" class="headerlink" title="隐式链接"></a>隐式链接</h4><ol>
+<li>添加LIB文件</li>
+<li>添加头文件</li>
+<li>添加DLL文件</li>
+</ol>
+<h4 id="显示链接"><a href="#显示链接" class="headerlink" title="显示链接"></a>显示链接</h4><ol>
+<li>添加DLL文件</li>
+<li>使用GetProcAddress函数得到要调用DLL中的函数的指针</li>
+<li>不用DLL时，用Free Library函数或者AfxFreeLibrary函数从进程的地址空间显式卸载DLL</li>
+</ol>
+<p>&ensp;&ensp;&ensp;&ensp;使用LoadLibrary显式链接，那么在函数的参数中可以指定DLL文件的完整路径；如果不指定路径，或者进行隐式链接，Windows将遵循下面的搜索顺序来定位搜索DLL：</p>
+<ol>
+<li>包含EXE文件的目录</li>
+<li>工程目录</li>
+<li>Windows系统目录</li>
+<li>Windows目录</li>
+<li>列在Path环境变量中的一系列目录</li>
+</ol>
+<h3 id="动态dll的使用-1"><a href="#动态dll的使用-1" class="headerlink" title="动态dll的使用"></a>动态dll的使用</h3><p>&ensp;&ensp;&ensp;&ensp;静态lib中，一个lib文件实际上是任意个obj文件的集合，obj文件是cpp文件编译生成的。静态库的.lib文件包含了链接库的所有信息(函数代码和接口信息。所以我们在调用静态库.lib时，只需要包含头文件目录(../include. .h)，以及附加库目录即可。因此，静态链接库的使用需要库的开发者提供生成库的.h头文件和.lib文件。</p>
+<h3 id="LIB，DLL及头文件配置"><a href="#LIB，DLL及头文件配置" class="headerlink" title="LIB，DLL及头文件配置"></a>LIB，DLL及头文件配置</h3><h4 id="LIB文件配置"><a href="#LIB文件配置" class="headerlink" title="LIB文件配置"></a>LIB文件配置</h4><ul>
+<li>通过设置工程配置完成LIB库添加(该方法需对Debug和Releaseb及x86/x64分别配置)</li>
+</ul>
+<ol>
+<li>工程-&gt;属性-&gt;配置属性-&gt;链接器-&gt;常规-&gt;附加库目录：加上lib文件存放目录</li>
+<li>工程-&gt;属性-&gt;配置属性-&gt;链接器-&gt;输入-&gt;附加依赖项：加上lib文件名</li>
+</ol>
+<ul>
+<li><p>使用编译语句<br>  #ifdef _DEBUG<br>  #pragma comment(lib,”..\debug\***.lib”)<br>  #else<br>  #pragma comment(lib,”..\release\***.lib”)<br>  #endif</p>
+</li>
+<li><p>直接添加库文件到工程中<br>&ensp;&ensp;&ensp;&ensp;解决方案视图—&gt;选中要添加lib的工程–&gt;点击右键–&gt;添加–&gt;现有项–&gt;选择lib文件–&gt;确定<br>&ensp;&ensp;&ensp;&ensp;这个方法适用于在我的工程的debug版本和Release版本中都使用同一个lib库文件时。这样就省去了方法一配置环境的繁琐，也省去了方法二中语句的可能性错误发生。</p>
+</li>
+</ul>
+<h4 id="头文件配置"><a href="#头文件配置" class="headerlink" title="头文件配置"></a>头文件配置</h4><p>&ensp;&ensp;&ensp;&ensp;在调用DLL中导出的函数之前要include对应的头文件，可以写文件的绝对路径，也可以拷贝到工程调用源文件的同一目录下，也可以通过VS添加（include）头文件目录</p>
+<ul>
+<li>VS项目-&gt;右击属性-&gt;配置属性-&gt;VC++目录-&gt;包含目录</li>
+</ul>
+<h4 id="DLL文件配置"><a href="#DLL文件配置" class="headerlink" title="DLL文件配置"></a>DLL文件配置</h4><p>&ensp;&ensp;&ensp;&ensp;一般将DLL文件拷贝到所调用exe文件在同一目录即可，也可通过VS实现DLL文件配置 </p>
+<ol>
+<li>VS项目-&gt;右击属性-&gt;配置属性-&gt;VC++目录-&gt;可执行目录 </li>
+<li>设定DLL目录的位置，具体方法为：项目右击-&gt;属性-&gt;配置属性-&gt;调试-&gt;工作目录，在这里设置DLL的路径即可</li>
+</ol>
+<p>&ensp;&ensp;&ensp;&ensp;此外，DLL文件有Debug和Release版本的区分，每种版本的设置都是独立的，要分别设置</p>
+<p>原文参考：<a href="https://blog.csdn.net/dxzysk/article/details/66477147" target="_blank" rel="noopener">https://blog.csdn.net/dxzysk/article/details/66477147</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:charles_wyt@126.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Charles_wyt<br></p>
+                <!-- <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p> -->
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
