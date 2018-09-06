@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="demo of each opensource libraryarmadillo#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;armadillo&amp;gt;
+
+using namespace std;
+using namespace arma;
+
+// Armadillo"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Charles_wyt"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="常用开源库配置(运行demo)"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="demo of each opensource libraryarmadillo#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;armadillo&amp;gt;
+
+using namespace std;
+using namespace arma;
+
+// Armadillo"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Home"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttps://i.imgur.com/klm5KIH.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttps://i.imgur.com/klm5KIH.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>常用开源库配置(运行demo) - Home</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://i.imgur.com/q06Ip0T.png"/>
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Blog of Charles_wyt</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Blog
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/charleswyt">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://i.imgur.com/klm5KIH.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>常用开源库配置(运行demo)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-31
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="demo-of-each-opensource-library"><a href="#demo-of-each-opensource-library" class="headerlink" title="demo of each opensource library"></a>demo of each opensource library</h2><h3 id="armadillo"><a href="#armadillo" class="headerlink" title="armadillo"></a>armadillo</h3><pre><code>#include &lt;iostream&gt;
+#include &lt;armadillo&gt;
+
+using namespace std;
+using namespace arma;
+
+// Armadillo documentation is available at:
+// http://arma.sourceforge.net/docs.html
+
+void main(void)
+{
+    cout &lt;&lt; &quot;Armadillo version: &quot; &lt;&lt; arma_version::as_string() &lt;&lt; endl;
+
+    mat A(2, 3);                                // directly specify the matrix size (elements are uninitialised)
+
+    cout &lt;&lt; &quot;A.n_rows: &quot; &lt;&lt; A.n_rows &lt;&lt; endl;   // .n_rows and .n_cols are read only
+    cout &lt;&lt; &quot;A.n_cols: &quot; &lt;&lt; A.n_cols &lt;&lt; endl;
+
+    A(1, 2) = 456.0;                            // directly access an element (indexing starts at 0)
+    A.print(&quot;A:&quot;);
+
+    A = 5.0;                                    // scalars are treated as a 1x1 matrix
+    A.print(&quot;A:&quot;);
+
+    A.set_size(4, 5);                           // change the size (data is not preserved)
+
+    A.fill(5.0);                                // set all elements to a particular value
+    A.print(&quot;A:&quot;);
+
+    // endr indicates &quot;end of row&quot;
+    A &lt;&lt; 0.165300 &lt;&lt; 0.454037 &lt;&lt; 0.995795 &lt;&lt; 0.124098 &lt;&lt; 0.047084 &lt;&lt; endr
+        &lt;&lt; 0.688782 &lt;&lt; 0.036549 &lt;&lt; 0.552848 &lt;&lt; 0.937664 &lt;&lt; 0.866401 &lt;&lt; endr
+        &lt;&lt; 0.348740 &lt;&lt; 0.479388 &lt;&lt; 0.506228 &lt;&lt; 0.145673 &lt;&lt; 0.491547 &lt;&lt; endr
+        &lt;&lt; 0.148678 &lt;&lt; 0.682258 &lt;&lt; 0.571154 &lt;&lt; 0.874724 &lt;&lt; 0.444632 &lt;&lt; endr
+        &lt;&lt; 0.245726 &lt;&lt; 0.595218 &lt;&lt; 0.409327 &lt;&lt; 0.367827 &lt;&lt; 0.385736 &lt;&lt; endr;
+
+    A.print(&quot;A:&quot;);
+
+    // determinant
+    cout &lt;&lt; &quot;det(A): &quot; &lt;&lt; det(A) &lt;&lt; endl;
+
+    // inverse
+    cout &lt;&lt; &quot;inv(A): &quot; &lt;&lt; endl &lt;&lt; inv(A) &lt;&lt; endl;
+
+    // save matrix as a text file
+    A.save(&quot;A.txt&quot;, raw_ascii);
+
+    // load from file
+    mat B;
+    B.load(&quot;A.txt&quot;);
+
+    // submatrices
+    cout &lt;&lt; &quot;B( span(0,2), span(3,4) ):&quot; &lt;&lt; endl &lt;&lt; B(span(0, 2), span(3, 4)) &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;B( 0,3, size(3,2) ):&quot; &lt;&lt; endl &lt;&lt; B(0, 3, size(3, 2)) &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;B.row(0): &quot; &lt;&lt; endl &lt;&lt; B.row(0) &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;B.col(1): &quot; &lt;&lt; endl &lt;&lt; B.col(1) &lt;&lt; endl;
+
+    // transpose
+    cout &lt;&lt; &quot;B.t(): &quot; &lt;&lt; endl &lt;&lt; B.t() &lt;&lt; endl;
+
+    // maximum from each column (traverse along rows)
+    cout &lt;&lt; &quot;max(B): &quot; &lt;&lt; endl &lt;&lt; max(B) &lt;&lt; endl;
+
+    // maximum from each row (traverse along columns)
+    cout &lt;&lt; &quot;max(B,1): &quot; &lt;&lt; endl &lt;&lt; max(B, 1) &lt;&lt; endl;
+
+    // maximum value in B
+    cout &lt;&lt; &quot;max(max(B)) = &quot; &lt;&lt; max(max(B)) &lt;&lt; endl;
+
+    // sum of each column (traverse along rows)
+    cout &lt;&lt; &quot;sum(B): &quot; &lt;&lt; endl &lt;&lt; sum(B) &lt;&lt; endl;
+
+    // sum of each row (traverse along columns)
+    cout &lt;&lt; &quot;sum(B,1) =&quot; &lt;&lt; endl &lt;&lt; sum(B, 1) &lt;&lt; endl;
+
+    // sum of all elements
+    cout &lt;&lt; &quot;accu(B): &quot; &lt;&lt; accu(B) &lt;&lt; endl;
+
+    // trace = sum along diagonal
+    cout &lt;&lt; &quot;trace(B): &quot; &lt;&lt; trace(B) &lt;&lt; endl;
+
+    // generate the identity matrix
+    mat C = eye&lt;mat&gt;(4, 4);
+
+    // random matrix with values uniformly distributed in the [0,1] interval
+    mat D = randu&lt;mat&gt;(4, 4);
+    D.print(&quot;D:&quot;);
+
+    // row vectors are treated like a matrix with one row
+    rowvec r;
+    r &lt;&lt; 0.59119 &lt;&lt; 0.77321 &lt;&lt; 0.60275 &lt;&lt; 0.35887 &lt;&lt; 0.51683;
+    r.print(&quot;r:&quot;);
+
+    // column vectors are treated like a matrix with one column
+    vec q;
+    q &lt;&lt; 0.14333 &lt;&lt; 0.59478 &lt;&lt; 0.14481 &lt;&lt; 0.58558 &lt;&lt; 0.60809;
+    q.print(&quot;q:&quot;);
+
+    // convert matrix to vector; data in matrices is stored column-by-column
+    vec v = vectorise(A);
+    v.print(&quot;v:&quot;);
+
+    // dot or inner product
+    cout &lt;&lt; &quot;as_scalar(r*q): &quot; &lt;&lt; as_scalar(r*q) &lt;&lt; endl;
+
+    // outer product
+    cout &lt;&lt; &quot;q*r: &quot; &lt;&lt; endl &lt;&lt; q*r &lt;&lt; endl;
+
+    // multiply-and-accumulate operation (no temporary matrices are created)
+    cout &lt;&lt; &quot;accu(A % B) = &quot; &lt;&lt; accu(A % B) &lt;&lt; endl;
+
+    // example of a compound operation
+    B += 2.0 * A.t();
+    B.print(&quot;B:&quot;);
+
+    // imat specifies an integer matrix
+    imat AA;
+    imat BB;
+
+    AA &lt;&lt; 1 &lt;&lt; 2 &lt;&lt; 3 &lt;&lt; endr &lt;&lt; 4 &lt;&lt; 5 &lt;&lt; 6 &lt;&lt; endr &lt;&lt; 7 &lt;&lt; 8 &lt;&lt; 9;
+    BB &lt;&lt; 3 &lt;&lt; 2 &lt;&lt; 1 &lt;&lt; endr &lt;&lt; 6 &lt;&lt; 5 &lt;&lt; 4 &lt;&lt; endr &lt;&lt; 9 &lt;&lt; 8 &lt;&lt; 7;
+
+    // comparison of matrices (element-wise); output of a relational operator is a umat
+    umat ZZ = (AA &gt;= BB);
+    ZZ.print(&quot;ZZ:&quot;);
+
+    // cubes (&quot;3D matrices&quot;)
+    cube Q(B.n_rows, B.n_cols, 2);
+
+    Q.slice(0) = B;
+    Q.slice(1) = 2.0 * B;
+
+    Q.print(&quot;Q:&quot;);
+
+    // 2D field of matrices; 3D fields are also supported
+    field&lt;mat&gt; F(4, 3);
+
+    for (uword col = 0; col &lt; F.n_cols; ++col)
+        for (uword row = 0; row &lt; F.n_rows; ++row)
+        {
+            F(row, col) = randu&lt;mat&gt;(2, 3);  // each element in field&lt;mat&gt; is a matrix
+        }
+
+    F.print(&quot;F:&quot;);
+}
+</code></pre><h3 id="opencv"><a href="#opencv" class="headerlink" title="opencv"></a>opencv</h3><pre><code>#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+using namespace cv;
+
+void main(void)
+{
+    Mat image = imread(&quot;path of your image&quot;);
+    imshow(&quot;display&quot;, image);
+    waitKey(0);
+}
+</code></pre><h3 id="jsoncpp"><a href="#jsoncpp" class="headerlink" title="jsoncpp"></a>jsoncpp</h3><pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &quot;json/json.h&quot;
+using namespace std;
+void main(void)
+{
+    Json::Reader reader;
+    Json::Value root;
+    //从文件中读取
+    ifstream is;
+    is.open(&quot;person.json&quot;, ios::binary);
+    if(reader.parse(is,root))
+    {
+        //读取根节点信息
+        string name = root[&quot;name&quot;].asString();
+        int age = root[&quot;age&quot;].asInt();
+        bool sex_is_male = root[&quot;sex_is_male&quot;].asBool();
+        cout &lt;&lt; &quot;My name is &quot; &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; &quot;I&apos;m &quot; &lt;&lt; age &lt;&lt; &quot; years old&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;I&apos;m a &quot; &lt;&lt; (sex_is_male ? &quot;man&quot; : &quot;woman&quot;) &lt;&lt; endl;
+        //读取子节点信息
+        string partner_name = root[&quot;partner&quot;][&quot;partner_name&quot;].asString();
+        int partner_age = root[&quot;partner&quot;][&quot;partner_age&quot;].asInt();
+        bool partner_sex_is_male = root[&quot;partner&quot;][&quot;partner_sex_is_male&quot;].asBool();
+        cout &lt;&lt; &quot;My partner&apos;s name is &quot; &lt;&lt; partner_name &lt;&lt; endl;
+        cout &lt;&lt; (partner_sex_is_male ? &quot;he&quot; : &quot;she&quot;) &lt;&lt; &quot; is &quot;
+            &lt;&lt; partner_age &lt;&lt; &quot; years old&quot; &lt;&lt; endl;
+        //读取数组信息
+        cout &lt;&lt; &quot;Here&apos;s my achievements:&quot; &lt;&lt; endl;
+        for(int i = 0; i &lt; root[&quot;achievement&quot;].size(); i++)
+        {
+            string ach = root[&quot;achievement&quot;][i].asString();
+            cout &lt;&lt; ach &lt;&lt; &apos;\t&apos;;
+        }
+        cout &lt;&lt; endl;
+        cout &lt;&lt; &quot;Reading Complete!&quot; &lt;&lt; endl;
+    }
+    is.close();
+    getchar();
+}
+=============================================================================
+person.json文件
+{
+    &quot;name&quot;:&quot;Tsybius&quot;,
+    &quot;age&quot;:23,
+    &quot;sex_is_male&quot;:true,
+    &quot;partner&quot;:
+    {
+        &quot;partner_name&quot;:&quot;Galatea&quot;,
+        &quot;partner_age&quot;:21,
+        &quot;partner_sex_is_male&quot;:false
+    },
+    &quot;achievement&quot;:[&quot;ach1&quot;,&quot;ach2&quot;,&quot;ach3&quot;]
+}
+</code></pre><h3 id="boost"><a href="#boost" class="headerlink" title="boost"></a>boost</h3><pre><code>#include &lt;boost/lexical_cast.hpp&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+void main(void)
+{
+    using boost::lexical_cast;
+    int a = lexical_cast&lt;int&gt;(&quot;123&quot;);
+    double b = lexical_cast&lt;double&gt;(&quot;123.0123456789&quot;);
+    string s0 = lexical_cast&lt;string&gt;(a);
+    string s1 = lexical_cast&lt;string&gt;(b);
+    cout &lt;&lt; &quot;number: &quot; &lt;&lt; a &lt;&lt; &quot;  &quot; &lt;&lt; b &lt;&lt; endl;
+    cout &lt;&lt; &quot;string: &quot; &lt;&lt; s0 &lt;&lt; &quot;  &quot; &lt;&lt; s1 &lt;&lt; endl;
+    int c = 0;
+    try
+    {
+        c = lexical_cast&lt;int&gt;(&quot;abcd&quot;);
+    }
+    catch (boost::bad_lexical_cast&amp; e)
+    {
+        cout &lt;&lt; e.what() &lt;&lt; endl;
+    }
+}
+</code></pre><h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h3><pre><code>extern &quot;C&quot;
+{
+    #include &quot;libavcodec\avcodec.h&quot;
+    #include &quot;libavformat\avformat.h&quot;
+    #include &quot;libavutil\channel_layout.h&quot;
+    #include &quot;libavutil\common.h&quot;
+    #include &quot;libavutil\imgutils.h&quot;
+    #include &quot;libswscale\swscale.h&quot; 
+    #include &quot;libavutil\imgutils.h&quot;
+    #include &quot;libavutil\opt.h&quot;
+    #include &quot;libavutil\mathematics.h&quot;
+    #include &quot;libavutil\samplefmt.h&quot; 
+};
+
+
+void main(void)
+{
+    printf(&quot; % s&quot;, avcodec_configuration());
+    return 0;
+}
+</code></pre><h3 id="crtptopp"><a href="#crtptopp" class="headerlink" title="crtptopp"></a>crtptopp</h3><pre><code>#include &lt;aes.h&gt;
+#include &lt;Hex.h&gt;                // StreamTransformationFilter
+#include &lt;modes.h&gt;              // CFB_Mode
+#include &lt;iostream&gt;                //std:cerr
+#include &lt;sstream&gt;                //std::stringstream
+#include &lt;string&gt;
+
+using namespace std;
+using namespace CryptoPP;
+
+std::string CFB_AESEncryptStr(std::string sKey, std::string sIV, const char *plainText)
+{
+    std::string outstr;
+
+    //填key
+    SecByteBlock key(AES::MAX_KEYLENGTH);
+    memset(key,0x30,key.size() );
+    sKey.size()&lt;=AES::MAX_KEYLENGTH?memcpy(key,sKey.c_str(),sKey.size()):memcpy(key,sKey.c_str(),AES::MAX_KEYLENGTH);
+
+    //填iv
+    byte iv[AES::BLOCKSIZE];
+    memset(iv,0x30,AES::BLOCKSIZE); 
+    sIV.size()&lt;=AES::BLOCKSIZE?memcpy(iv,sIV.c_str(),sIV.size()):memcpy(iv,sIV.c_str(),AES::BLOCKSIZE);
+
+    AES::Encryption aesEncryption((byte *)key, AES::MAX_KEYLENGTH);
+
+    CFB_Mode_ExternalCipher::Encryption cfbEncryption(aesEncryption, iv);
+
+    StreamTransformationFilter cfbEncryptor(cfbEncryption, new HexEncoder(new StringSink(outstr)));
+    cfbEncryptor.Put((byte *)plainText, strlen(plainText));
+    cfbEncryptor.MessageEnd();
+
+    return outstr;
+}  
+
+std::string CFB_AESDecryptStr(std::string sKey, std::string sIV, const char *cipherText)
+{  
+    std::string outstr;
+
+    //填key
+    SecByteBlock key(AES::MAX_KEYLENGTH);
+    memset(key,0x30,key.size() );
+    sKey.size()&lt;=AES::MAX_KEYLENGTH?memcpy(key,sKey.c_str(),sKey.size()):memcpy(key,sKey.c_str(),AES::MAX_KEYLENGTH);
+
+    //填iv
+    byte iv[AES::BLOCKSIZE];
+    memset(iv,0x30,AES::BLOCKSIZE);
+    sIV.size()&lt;=AES::BLOCKSIZE?memcpy(iv,sIV.c_str(),sIV.size()):memcpy(iv,sIV.c_str(),AES::BLOCKSIZE);
+
+    CFB_Mode&lt;AES &gt;::Decryption cfbDecryption((byte *)key, AES::MAX_KEYLENGTH, iv);
+
+    HexDecoder decryptor(new StreamTransformationFilter(cfbDecryption, new StringSink(outstr)));
+    decryptor.Put((byte *)cipherText, strlen(cipherText));
+    decryptor.MessageEnd();
+
+    return outstr;
+}  
+
+void main(void)
+{
+    string plainText = &quot;Hello Crypto++! This is my first Crypto++ program.&quot;;
+    string aesKey = &quot;0123456789ABCDEF0123456789ABCDEF&quot;;//256bits, also can be 128 bits or 192bits
+    string aesIV = &quot;ABCDEF0123456789&quot;;//128 bits
+    string cipherText,decryptedText;
+
+    cipherText = CFB_AESEncryptStr(aesKey, aesIV, plainText.c_str());//加密¨¹
+    decryptedText = CFB_AESDecryptStr(aesKey, aesIV, cipherText.c_str());//解密¨¹
+
+    cout &lt;&lt; &quot;Crypto++ AES-256 CFB模式加密测试?&quot;&lt;&lt; endl;
+    cout &lt;&lt; &quot;加密用密钥:&quot; &lt;&lt;aesKey &lt;&lt; endl;
+    cout &lt;&lt; &quot;密钥长度:&quot; &lt;&lt;AES::MAX_KEYLENGTH*8 &lt;&lt;&quot;bits&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;CFB模式所需的IV:&quot; &lt;&lt; aesIV &lt;&lt; endl;
+    cout &lt;&lt; endl;
+    cout &lt;&lt; &quot;原文：&quot; &lt;&lt; plainText &lt;&lt; endl;
+    cout &lt;&lt; &quot;密文：&quot; &lt;&lt; cipherText &lt;&lt;endl;
+    cout &lt;&lt; &quot;恢复明文：&quot; &lt;&lt; decryptedText &lt;&lt;endl;
+
+    getchar();
+}
+</code></pre><h3 id="lame"><a href="#lame" class="headerlink" title="lame"></a>lame</h3><pre><code>#include &lt;iostream&gt;
+#include &lt;lame.h&gt;
+
+using namespace std;
+
+void main(void)
+{
+    cout &lt;&lt; get_lame_version() &lt;&lt; endl;
+    system(&quot;pause&quot;);
+}
+</code></pre><h3 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h3><pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;windows.h&gt;
+#include &quot;zlib.h&quot;
+
+void MyDoMinus64(LARGE_INTEGER *R, LARGE_INTEGER A, LARGE_INTEGER B)
+{
+    R-&gt;HighPart = A.HighPart - B.HighPart;
+    if (A.LowPart &gt;= B.LowPart)
+        R-&gt;LowPart = A.LowPart - B.LowPart;
+    else
+    {
+        R-&gt;LowPart = A.LowPart - B.LowPart;
+        R-&gt;HighPart--;
+    }
+}
+
+#ifdef _M_X64
+
+unsigned __int64 __rdtsc(void);
+
+void BeginCountRdtsc(LARGE_INTEGER * pbeginTime64)
+{
+    pbeginTime64-&gt;QuadPart = __rdtsc();
+}
+
+LARGE_INTEGER GetResRdtsc(LARGE_INTEGER beginTime64, BOOL fComputeTimeQueryPerf)
+{
+    LARGE_INTEGER LIres;
+    unsigned _int64 res = __rdtsc() - ((unsigned _int64)(beginTime64.QuadPart));
+    LIres.QuadPart = res;
+
+    return LIres;
+}
+#else
+#ifdef _M_IX86
+void myGetRDTSC32(LARGE_INTEGER * pbeginTime64)
+{
+    DWORD dwEdx, dwEax;
+    _asm
+    {
+        rdtsc
+        mov dwEax, eax
+        mov dwEdx, edx
+    }
+    pbeginTime64-&gt;LowPart = dwEax;
+    pbeginTime64-&gt;HighPart = dwEdx;
+}
+
+void BeginCountRdtsc(LARGE_INTEGER * pbeginTime64)
+{
+    myGetRDTSC32(pbeginTime64);
+}
+
+LARGE_INTEGER GetResRdtsc(LARGE_INTEGER beginTime64, BOOL fComputeTimeQueryPerf)
+{
+    LARGE_INTEGER LIres, endTime64;
+    myGetRDTSC32(&amp;endTime64);
+    LIres.LowPart = LIres.HighPart = 0;
+    MyDoMinus64(&amp;LIres, endTime64, beginTime64);
+
+    return LIres;
+
+}
+
+#else
+
+void myGetRDTSC32(LARGE_INTEGER * pbeginTime64)
+
+{
+
+}
+
+void BeginCountRdtsc(LARGE_INTEGER * pbeginTime64)
+
+{
+
+}
+
+LARGE_INTEGER GetResRdtsc(LARGE_INTEGER beginTime64, BOOL fComputeTimeQueryPerf)
+{
+    LARGE_INTEGER lr;
+    lr.QuadPart = 0;
+
+    return lr;
+
+}
+
+#endif
+
+#endif
+void BeginCountPerfCounter(LARGE_INTEGER * pbeginTime64, BOOL fComputeTimeQueryPerf)
+{
+    if ((!fComputeTimeQueryPerf) || (!QueryPerformanceCounter(pbeginTime64)))
+    {
+        pbeginTime64-&gt;LowPart = GetTickCount();
+        pbeginTime64-&gt;HighPart = 0;
+    }
+}
+
+DWORD GetMsecSincePerfCounter(LARGE_INTEGER beginTime64, BOOL fComputeTimeQueryPerf)
+{
+    LARGE_INTEGER endTime64, ticksPerSecond, ticks;
+    DWORDLONG ticksShifted, tickSecShifted;
+    DWORD dwLog = 16 + 0;
+    DWORD dwRet;
+
+    if ((!fComputeTimeQueryPerf) || (!QueryPerformanceCounter(&amp;endTime64)))
+        dwRet = (GetTickCount() - beginTime64.LowPart) * 1;
+    else
+    {
+        MyDoMinus64(&amp;ticks, endTime64, beginTime64);
+        QueryPerformanceFrequency(&amp;ticksPerSecond);
+        {
+            ticksShifted = Int64ShrlMod32(*(DWORDLONG*)&amp;ticks, dwLog);
+            tickSecShifted = Int64ShrlMod32(*(DWORDLONG*)&amp;ticksPerSecond, dwLog);
+        }
+        dwRet = (DWORD)((((DWORD)ticksShifted) * 1000) / (DWORD)(tickSecShifted));
+        dwRet *= 1;
+    }
+
+    return dwRet;
+}
+
+int ReadFileMemory(const char* filename, long* plFileSize, void** pFilePtr)
+{
+    FILE* stream;
+    void* ptr;
+    int retVal = 1;
+
+    stream = fopen(filename, &quot;rb&quot;);
+
+    if (stream == NULL)
+        return 0;
+
+    fseek(stream, 0, SEEK_END);
+    *plFileSize = ftell(stream);
+    fseek(stream, 0, SEEK_SET);
+    ptr = malloc((*plFileSize) + 1);
+
+    if (ptr == NULL)
+        retVal = 0;
+    else
+    {
+        if (fread(ptr, 1, *plFileSize, stream) != (*plFileSize))
+            retVal = 0;
+    }
+    fclose(stream);
+    *pFilePtr = ptr;
+
+    return retVal;
+
+}
+
+int main(int argc, char *argv[])
+{
+    int BlockSizeCompress = 0x8000;
+    int BlockSizeUncompress = 0x8000;
+    int cprLevel = Z_DEFAULT_COMPRESSION;
+    long lFileSize;
+    unsigned char* FilePtr;
+    long lBufferSizeCpr;
+    long lBufferSizeUncpr;
+    long lCompressedSize = 0;
+    unsigned char* CprPtr;
+    unsigned char* UncprPtr;
+    long lSizeCpr, lSizeUncpr;
+    DWORD dwGetTick, dwMsecQP;
+    LARGE_INTEGER li_qp, li_rdtsc, dwResRdtsc;
+
+
+    printf(&quot;test zlib 1.2.5 using dynamic library.\n&quot;);
+    printf(&quot;Charles, Sep 1st, 2018.\n&quot;);
+    printf(&quot;press any key to start.&quot;);;
+
+    getchar();
+
+    if (argc &lt;= 1)
+    {
+        printf(&quot;run TestZlib &lt;File&gt; [BlockSizeCompress] [BlockSizeUncompress] [compres. level]\n&quot;);
+        return 0;
+    }
+
+    if (ReadFileMemory(argv[1], &amp;lFileSize, (void**)&amp;FilePtr) == 0)
+    {
+        printf(&quot;error reading %s\n&quot;, argv[1]);
+        return 1;
+    }
+    else 
+        printf(&quot;file %s read, %u bytes\n&quot;, argv[1], lFileSize);
+
+    if (argc &gt;= 3)
+        BlockSizeCompress = atol(argv[2]);
+
+    if (argc &gt;= 4)
+        BlockSizeUncompress = atol(argv[3]);
+
+    if (argc &gt;= 5)
+        cprLevel = (int)atol(argv[4]);
+
+    lBufferSizeCpr = lFileSize + (lFileSize / 0x10) + 0x200;
+    lBufferSizeUncpr = lBufferSizeCpr;
+    CprPtr = (unsigned char*)malloc(lBufferSizeCpr + BlockSizeCompress);
+    BeginCountPerfCounter(&amp;li_qp, TRUE);
+    dwGetTick = GetTickCount();
+    BeginCountRdtsc(&amp;li_rdtsc);
+    {
+        z_stream zcpr;
+
+        int ret = Z_OK;
+        long lOrigToDo = lFileSize;
+        long lOrigDone = 0;
+        int step = 0;
+
+        memset(&amp;zcpr, 0, sizeof(z_stream));
+        deflateInit(&amp;zcpr, cprLevel);
+        zcpr.next_in = FilePtr;
+        zcpr.next_out = CprPtr;
+        do
+        {
+            long all_read_before = zcpr.total_in;
+
+            zcpr.avail_in = min(lOrigToDo, BlockSizeCompress);
+            zcpr.avail_out = BlockSizeCompress;
+            ret = deflate(&amp;zcpr, (zcpr.avail_in == lOrigToDo) ? Z_FINISH : Z_SYNC_FLUSH);
+            lOrigDone += (zcpr.total_in - all_read_before);
+            lOrigToDo -= (zcpr.total_in - all_read_before);
+            step++;
+        } while (ret == Z_OK);
+
+        lSizeCpr = zcpr.total_out;
+        deflateEnd(&amp;zcpr);
+        dwGetTick = GetTickCount() - dwGetTick;
+        dwMsecQP = GetMsecSincePerfCounter(li_qp, TRUE);
+        dwResRdtsc = GetResRdtsc(li_rdtsc, TRUE);
+
+        printf(&quot;total compress size = %u, in %u step\n&quot;, lSizeCpr, step);
+        printf(&quot;time = %u msec = %f sec\n&quot;, dwGetTick, dwGetTick / (double)1000.);
+        printf(&quot;defcpr time QP = %u msec = %f sec\n&quot;, dwMsecQP, dwMsecQP / (double)1000.);
+        printf(&quot;defcpr result rdtsc = %I64x\n\n&quot;, dwResRdtsc.QuadPart);
+    }
+
+    CprPtr = (unsigned char*)realloc(CprPtr, lSizeCpr);
+    UncprPtr = (unsigned char*)malloc(lBufferSizeUncpr + BlockSizeUncompress);
+    BeginCountPerfCounter(&amp;li_qp, TRUE);
+    dwGetTick = GetTickCount();
+    BeginCountRdtsc(&amp;li_rdtsc);
+    {
+        z_stream zcpr;
+        int ret = Z_OK;
+        long lOrigToDo = lSizeCpr;
+        long lOrigDone = 0;
+        int step = 0;
+
+        memset(&amp;zcpr, 0, sizeof(z_stream));
+
+        inflateInit(&amp;zcpr);
+        zcpr.next_in = CprPtr;
+        zcpr.next_out = UncprPtr;
+
+        do
+        {
+            long all_read_before = zcpr.total_in;
+            zcpr.avail_in = min(lOrigToDo, BlockSizeUncompress);
+            zcpr.avail_out = BlockSizeUncompress;
+            ret = inflate(&amp;zcpr, Z_SYNC_FLUSH);
+            lOrigDone += (zcpr.total_in - all_read_before);
+            lOrigToDo -= (zcpr.total_in - all_read_before);
+            step++;
+        } while (ret == Z_OK);
+
+        lSizeUncpr = zcpr.total_out;
+        inflateEnd(&amp;zcpr);
+        dwGetTick = GetTickCount() - dwGetTick;
+        dwMsecQP = GetMsecSincePerfCounter(li_qp, TRUE);
+        dwResRdtsc = GetResRdtsc(li_rdtsc, TRUE);
+
+        printf(&quot;total uncompress size = %u, in %u step\n&quot;, lSizeUncpr, step);
+        printf(&quot;time = %u msec = %f sec\n&quot;, dwGetTick, dwGetTick / (double)1000.);
+        printf(&quot;uncpr time QP = %u msec = %f sec\n&quot;, dwMsecQP, dwMsecQP / (double)1000.);
+        printf(&quot;uncpr result rdtsc = %I64x\n\n&quot;, dwResRdtsc.QuadPart);
+    }
+
+    if (lSizeUncpr == lFileSize)
+    {
+        if (memcmp(FilePtr, UncprPtr, lFileSize) == 0)
+            printf(&quot;compare ok\n&quot;);
+    }
+
+    printf(&quot;press any key to exit the program.&quot;);
+    getchar();
+
+    return 0;
+}
+</code></pre><h3 id="glog"><a href="#glog" class="headerlink" title="glog"></a>glog</h3><pre><code>#include &lt;iostream&gt;
+#include &quot;glog/logging.h&quot;
+
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    google::InitGoogleLogging(argv[0]);     // 初始化
+    FLAGS_log_dir = &quot;.&quot;;                    // 设置log目录
+    LOG(INFO) &lt;&lt; &quot;hello glog&quot;;                // 打印log：“hello glog.  类似于C++ stream
+}
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:charles_wyt@126.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Charles_wyt<br></p>
+                <!-- <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p> -->
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
