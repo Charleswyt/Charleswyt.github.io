@@ -17,7 +17,7 @@
 环境配置C/C++调用Python
 下载python并完成python环境配置
 运行Visual Studio,
-将\inc"/>
+将***\"/>
     
 
     <!--Author-->
@@ -36,7 +36,7 @@
 环境配置C/C++调用Python
 下载python并完成python环境配置
 运行Visual Studio,
-将\inc"/>
+将***\"/>
     
 
     <!--Open Graph Site Name-->
@@ -205,18 +205,18 @@
 <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="C-C-调用Python"><a href="#C-C-调用Python" class="headerlink" title="C/C++调用Python"></a>C/C++调用Python</h2><ol>
 <li>下载python并完成python环境配置</li>
 <li>运行Visual Studio,<ul>
-<li>将<strong><em>\include添加至VC++包含目录(</em></strong>为python根目录)</li>
+<li>将***\include添加至VC++包含目录(***为python根目录)</li>
 <li>将***\libs添加至VC++库目录</li>
 </ul>
 </li>
 <li>在链接器-&gt;输入-&gt;附加依赖项添加”python35.lib”(根据python版本自行修改)</li>
-<li>新建一个cpp文件，输入 <strong>#include&lt;python.h&gt;</strong>，若不报错则配置完成</li>
+<li>新建一个cpp文件，输入<strong>#include&lt;python.h&gt;</strong>，若不报错则配置完成</li>
 </ol>
 <h2 id="C-C-调用Matlab"><a href="#C-C-调用Matlab" class="headerlink" title="C/C++调用Matlab"></a>C/C++调用Matlab</h2><ol>
 <li>下载matlab及对应的vs，并完成环境配置</li>
 <li>在matlab命令窗口输入mcc -W cpplib:”name of function” -T link:lib “name of matlab script”(根据情况自行修改””内的内容即可)</li>
 <li>将生成的文件放入同一个文件夹中(可选)，生成的文件有：<ul>
-<li><strong><em>.cpp (</em></strong>为函数名)</li>
+<li>***.cpp (***为函数名)</li>
 <li>***.def</li>
 <li>***.dll</li>
 <li>***.exp</li>
@@ -228,16 +228,114 @@
 <li>requireMCRProducts.txt</li>
 </ul>
 </li>
-<li>将<strong><em>\extern\include添加至VC++包含目录，将</em></strong>\extern\lib\win64\mingw64添加至VC++库目录</li>
+<li>将***\extern\include添加至VC++包含目录，并将***\extern\lib\win64\ mingw64添加至VC++库目录</li>
 <li>将生成的.h及.lib文件所在路径(步骤三)分别添加在VC++的包含目录及库目录(或直接将生成的文件加入项目)</li>
 <li>将mclmcr.lib、mclmcrrt.lib、libmex.lib、libmx.lib、libmat.lib、libeng.lib及生成的***.lib文件添加至链接器-&gt;输入-&gt;附加依赖项</li>
 <li>将相关dll文件拷贝至exe所在路径</li>
-<li>运行demo检测配置是否完成<br>注：+ 如果使用的MATLAB是64位的版本，那么C++的程序也要在x64下配置<ul>
+<li>运行demo检测配置是否完成</li>
+</ol>
+<ul>
+<li>如果使用的MATLAB是64位的版本，那么C++的程序也要在x64下配置</li>
 <li>如果使用的MATLAB是32位的版本，那么C++的程序也要在x86下配置</li>
 </ul>
-</li>
+<h2 id="Python调用C-C"><a href="#Python调用C-C" class="headerlink" title="Python调用C/C++"></a>Python调用C/C++</h2><p>&ensp;&ensp;&ensp;&ensp;python通过DLL文件实现对C/C++的调用，调用方式如下：</p>
+<pre><code>import ctypes
+
+lib = ctypes.cdll.LoadLibrary(&quot;path of your dll&quot;) 
+lib.&quot;function&quot;()
+</code></pre><p>具体调用方式参考<a href="https://docs.python.org/2/library/ctypes.html" target="_blank" rel="noopener">ctypes — A foreign function library for Python</a></p>
+<h2 id="Python调用Matlab"><a href="#Python调用Matlab" class="headerlink" title="Python调用Matlab"></a>Python调用Matlab</h2><ol>
+<li>cd至***\extern\engines\python(***为matlab根目录)</li>
+<li>打开cmd，输入python setup.py install</li>
+<li>进入python环境，运行demo检查配置是否完成</li>
 </ol>
-<h2 id="Python调用C-C"><a href="#Python调用C-C" class="headerlink" title="Python调用C/C++"></a>Python调用C/C++</h2><h2 id="Python调用Matlab"><a href="#Python调用Matlab" class="headerlink" title="Python调用Matlab"></a>Python调用Matlab</h2><h2 id="Matlab调用C-C"><a href="#Matlab调用C-C" class="headerlink" title="Matlab调用C/C++"></a>Matlab调用C/C++</h2><h2 id="Matlab调用Python"><a href="#Matlab调用Python" class="headerlink" title="Matlab调用Python"></a>Matlab调用Python</h2>
+<pre><code>import matlab
+import matlab.engine
+
+engine = matlab.engine.start_matlab()               # Start MATLAB process
+engine = matlab.engine.start_matlab(&quot;-desktop&quot;)     # Start MATLAB process with graphic UI
+engine.sqrt(2.)
+</code></pre><h2 id="Matlab调用C-C"><a href="#Matlab调用C-C" class="headerlink" title="Matlab调用C/C++"></a>Matlab调用C/C++</h2><ol>
+<li>打开Matlab完成编译器配置(mex -setup)</li>
+<li>写C++函数，函数的形式必须是</li>
+</ol>
+<pre><code>void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+    nlhs：输出参数个数
+    plhs：输出参数列表
+    nrhs：输入参数个数
+    prhs：输入参数列表
+</code></pre><ol start="3">
+<li>将cpp文件拷贝至Matlab当前目录，在Malab命令窗口输入mex “file name”.cpp，即可生成”file name”.mex64/“file name”.mex32文件</li>
+<li>运行demo检测配置是否完成</li>
+</ol>
+<pre><code>C++代码：
+#include &quot;mex.h&quot;
+
+//MATLAB调用形式： [resizedArr, resizedDims] = ResizeArray(arr, selRows, sekCols)
+
+void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
+{
+    if (nrhs != 3)
+    {
+        mexErrMsgTxt(&quot;参数个数不正确!&quot;);
+    }
+
+    int iRowNum = mxGetM(prhs[0]);
+    int iColNum = mxGetN(prhs[0]);
+    double *pArr = (double *)mxGetPr(prhs[0]);
+
+    double *pSelRows = (double *)mxGetPr(prhs[1]);
+    double *pSelCols = (double *)mxGetPr(prhs[2]);
+    int iRowsRowNum = mxGetM(prhs[1]);
+    int iRowsColNum = mxGetN(prhs[1]);
+
+    if (iRowsRowNum != 1 &amp;&amp; iRowsColNum != 1)
+    {
+        mexErrMsgTxt(&quot;行参数不正确！&quot;);
+    }
+    int iRowsNum = iRowsRowNum * iRowsColNum;
+
+    int selColsRowNum = mxGetM(prhs[2]);
+    int selColsColNum = mxGetN(prhs[2]);
+
+    if (selColsRowNum != 1 &amp;&amp; selColsColNum != 1)
+    {
+        mexErrMsgTxt(&quot;列参数不正确！&quot;);
+    }
+
+    int iColsNum = selColsRowNum * selColsColNum;
+
+    plhs[1] = mxCreateDoubleMatrix(2, 1, mxREAL);
+    double *resizedDims = (double *)mxGetPr(plhs[1]);
+
+    resizedDims[0] = iRowsNum;
+    resizedDims[1] = iColsNum;
+
+    plhs[0] = mxCreateDoubleMatrix(iRowsNum, iColsNum, mxREAL);
+    double *pResizedArr = (double *)mxGetPr(plhs[0]);
+
+//这里因为MATLAB中数据得按列优先
+#define ARR(row, col) pArr[(col)*iRowNum + row]
+#define RARR(row, col) pResizedArr[(col)*iRowsNum + row]
+
+    for (int r = 0; r &lt; iRowsNum; r++)
+    {
+        for (int c = 0; c &lt; iColsNum; c++)
+        {
+            RARR(r, c) = ARR((int)pSelRows[r] - 1, (int)pSelCols[c] - 1);
+        }
+    }
+
+    mexPrintf(&quot;OK!\n&quot;);
+}
+======================================================================
+matlab代码：
+arr = rand(10, 10);
+rows = [1, 3];
+cols = [2, 4];
+[rarr, rdims] = main(arr, rows, cols);
+</code></pre><h2 id="Matlab调用Python"><a href="#Matlab调用Python" class="headerlink" title="Matlab调用Python"></a>Matlab调用Python</h2><p>&ensp;&ensp;&ensp;&ensp;Matlab本身提供了对python的接口，直接在Matlab命令行窗口输入”pyversion”即可查看matlab关联的python，如下图所示<br><img src="https://i.imgur.com/OOobGjj.png" alt=""><br>具体调用可参考<a href="https://ww2.mathworks.cn/help/matlab/matlab_external/call-python-from-matlab.html" target="_blank" rel="noopener">从 MATLAB 调用 Python</a></p>
+
 
                 
             </div>
