@@ -193,8 +193,8 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="AAC概述"><a href="#AAC概述" class="headerlink" title="AAC概述"></a>AAC概述</h2><p>&ensp;&ensp;&ensp;&ensp;AAC是高级音频编码(Advanced Audio Coding)的缩写，出现于1997年，最初是基于MPEG-2的音频编码技术。由Fraunhofer IIS、Dolby Laboratories、AT&amp;T、Sony等公司共同开发，目的是取代MP3格式。2000年，MPEG-4标准出台，AAC重新集成了其它技术(PS,SBR)，为区别于传统的MPEG-2 AAC，故含有SBR或PS特性的AAC又称为MPEG-4 AAC。
-&ensp;&ensp;&ensp;&ensp;AAC是新一代的音频有损压缩技术，它通过一些附加的编码技术(比如PS，SBR等)，衍生出了LC-AAC，HE-AAC，HE-AACv2三种主要的编码，LC-AAC就是比较传统的AAC，相对而言，主要用于中高码率(&gt;=80Kbps)，HE-AAC(相当于AAC + SBR)主要用于中低码(&lt;=80Kbps)，而新近推出的HE-AACv2(相当于AAC + SBR + PS)主要用于低码率(&lt;=48Kbps)，事实上大部分编码器设成&lt;=48Kbps自动启用PS技术，而&gt;48Kbps就不加PS，就相当于普通的HE-AAC。</p>
+                <h2 id="AAC概述"><a href="#AAC概述" class="headerlink" title="AAC概述"></a>AAC概述</h2><p>&ensp;&ensp;&ensp;&ensp;AAC是高级音频编码(Advanced Audio Coding)的缩写，出现于1997年，最初是基于MPEG-2的音频编码技术。由Fraunhofer IIS、Dolby Laboratories、AT&amp;T、Sony等公司共同开发，目的是取代MP3格式。2000年，MPEG-4标准出台，AAC重新集成了其它技术(PS,SBR)，为区别于传统的MPEG-2 AAC，故含有SBR或PS特性的AAC又称为MPEG-4 AAC。</p>
+<p>&ensp;&ensp;&ensp;&ensp;AAC是新一代的音频有损压缩技术，它通过一些附加的编码技术(比如PS，SBR等)，衍生出了LC-AAC，HE-AAC，HE-AACv2三种主要的编码，LC-AAC就是比较传统的AAC，相对而言，主要用于中高码率(&gt;=80Kbps)，HE-AAC(相当于AAC + SBR)主要用于中低码(&lt;=80Kbps)，而新近推出的HE-AACv2(相当于AAC + SBR + PS)主要用于低码率(&lt;=48Kbps)，事实上大部分编码器设成&lt;=48Kbps自动启用PS技术，而&gt;48Kbps就不加PS，就相当于普通的HE-AAC。</p>
 <h2 id="AAC规格简述"><a href="#AAC规格简述" class="headerlink" title="AAC规格简述"></a>AAC规格简述</h2><p>&ensp;&ensp;&ensp;&ensp;AAC共有9种规格，以适应不同的场合的需要：</p>
 <ul>
 <li><p>MPEG-2 AAC LC</p>
@@ -317,9 +317,9 @@
 <p>&ensp;&ensp;&ensp;&ensp;联合立体声的是对原来的取样进行的一定的渲染工作，使声音更”好听”些。</p>
 </li>
 <li><p>知觉噪声替换(PNS)</p>
-<p>&ensp;&ensp;&ensp;&ensp;知觉噪声替换模块是一种以参数编码的方式模拟噪声的模块。在判别出音频值中的噪 声后，将些噪声不进行量化编码，而是采用一些参数告诉解码器端这是某种噪声，然后解码器端将会对这些噪声用一些随机的编码来制造出这一类型的噪声。
-&ensp;&ensp;&ensp;&ensp;在具体操作上，PNS模块对每个尺度因子带侦测频率4kHz以下的信号成分。如果这个信号既不是音调，在时间上也无强烈的能量变动，就被认为是噪声信号。其信号的音调及能量变化都在心理声学模型中算出。
-&ensp;&ensp;&ensp;&ensp;在解码中，如果发现使用了哈夫曼表13(NOISE_HCB)，则表明使用了PNS。由于M/S立体声解码与PNS解码互斥，故可以用参数ms_used来表明是否两个声道都用同样的PNS。如果ms_used参数为1，则两个声道会用同样的随机向量来生成噪声信号。PNS的能量信号用noise_nrg来表示，如果使用了PNS，则能量信号将会代替各自的尺度因子来传送。噪声能量 编码同尺度因子一样，采用差分编码的方式。第一个值同样为全局增益值。它同强度立体声位置值及尺度因子交替地放在一起，但对差分解码来说又彼此忽略。即下一个噪声能量值以上一个噪声能量值而不是强度立体声位置或尺度因子为标准差分解码。随机能量将会在一个尺度 因子带内产生noise_nrg所计算出的平均能量分布。此项技术只有在MPEG-4 AAC中才会使用。</p>
+<p>&ensp;&ensp;&ensp;&ensp;知觉噪声替换模块是一种以参数编码的方式模拟噪声的模块。在判别出音频值中的噪 声后，将些噪声不进行量化编码，而是采用一些参数告诉解码器端这是某种噪声，然后解码器端将会对这些噪声用一些随机的编码来制造出这一类型的噪声。</p>
+<p>&ensp;&ensp;&ensp;&ensp;在具体操作上，PNS模块对每个尺度因子带侦测频率4kHz以下的信号成分。如果这个信号既不是音调，在时间上也无强烈的能量变动，就被认为是噪声信号。其信号的音调及能量变化都在心理声学模型中算出。</p>
+<p>&ensp;&ensp;&ensp;&ensp;在解码中，如果发现使用了哈夫曼表13(NOISE_HCB)，则表明使用了PNS。由于M/S立体声解码与PNS解码互斥，故可以用参数ms_used来表明是否两个声道都用同样的PNS。如果ms_used参数为1，则两个声道会用同样的随机向量来生成噪声信号。PNS的能量信号用noise_nrg来表示，如果使用了PNS，则能量信号将会代替各自的尺度因子来传送。噪声能量 编码同尺度因子一样，采用差分编码的方式。第一个值同样为全局增益值。它同强度立体声位置值及尺度因子交替地放在一起，但对差分解码来说又彼此忽略。即下一个噪声能量值以上一个噪声能量值而不是强度立体声位置或尺度因子为标准差分解码。随机能量将会在一个尺度 因子带内产生noise_nrg所计算出的平均能量分布。此项技术只有在MPEG-4 AAC中才会使用。</p>
 </li>
 <li><p>瞬时噪声整形(TNS)</p>
 <p>&ensp;&ensp;&ensp;&ensp;这项神奇的技术可以通过在频率域上的预测，来修整时域上的量化噪音的分布。在一些特殊的语音和剧烈变化信号的量化上，TNS技术对音质的提高贡献巨大。
