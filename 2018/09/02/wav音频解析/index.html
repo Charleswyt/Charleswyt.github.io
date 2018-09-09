@@ -13,7 +13,8 @@
     
 
     
-        <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF"/>
+        <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
+&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIF"/>
     
 
     <!--Author-->
@@ -23,12 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="wav音频解析"/>
+        <meta property="og:title" content="WAV音频解析"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF"/>
+        <meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
+&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIF"/>
     
 
     <!--Open Graph Site Name-->
@@ -55,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>wav音频解析 - Home</title>
+    <title>WAV音频解析 - Home</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -151,13 +153,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>wav音频解析</h1>
+                    <h1>WAV音频解析</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2018-09-06
+                            2018-09-02
                         
                     </span>
                 </div>
@@ -193,8 +195,11 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>&ensp;&ensp;&ensp;&ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。<br>&ensp;&ensp;&ensp;&ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。<br>&ensp;&ensp;&ensp;&ensp;WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE, Chunk, Format Chunk, Fact Chunk(可选), LIST Chunk(可选), Data Chunk。<br>具体见下图：</p>
-<pre><code>------------------------------------------------
+                <p>&ensp;&ensp;&ensp;&ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
+&ensp;&ensp;&ensp;&ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。
+&ensp;&ensp;&ensp;&ensp;WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE, Chunk, Format Chunk, Fact Chunk(可选), LIST Chunk(可选), Data Chunk。</p>
+<pre><code>具体见下图：
+------------------------------------------------
 |               RIFF WAVE Chunk                |
 |               ID  = &apos;RIFF&apos;                   |
 |               RiffType = &apos;WAVE&apos;              |
@@ -212,7 +217,8 @@
 |                 ID = &apos;data&apos;                  |
 ------------------------------------------------
 </code></pre><p>&ensp;&ensp;&ensp;&ensp;其中除了Fact Chunk和LIST Chunk外，其他三个Chunk是必须的。每个Chunk有各自的ID，位于Chunk最开始位置，作为标示，而且均为4个字节。并且紧跟在ID后面的是Chunk大小(去除ID和Size所占的字节数后剩下的其他字节数目)，4个字节表示，低字节表示数值低位，高字节表示数值高位。下面具体介绍各个Chunk内容。</p>
-<h1 id="1-RIFF-WAVE-Chunk"><a href="#1-RIFF-WAVE-Chunk" class="headerlink" title="1.RIFF WAVE Chunk"></a>1.RIFF WAVE Chunk</h1><pre><code>|       |  Length  |   Content   |
+<h3 id="1-RIFF-WAVE-Chunk"><a href="#1-RIFF-WAVE-Chunk" class="headerlink" title="1. RIFF WAVE Chunk"></a>1. RIFF WAVE Chunk</h3><pre><code>==================================
+|       |  Length  |   Content   |
 ==================================
 | ID    |  4 Bytes |   &apos;RIFF&apos;    |
 ----------------------------------
@@ -227,8 +233,7 @@
     DWORD dwRiffSize;
     char  szRiffFormat[4];    // &apos;W&apos;,&apos;A&apos;,&apos;V&apos;,&apos;E&apos;
 };
-</code></pre><p>2.Format Chunk</p>
-<pre><code>====================================================================
+</code></pre><h3 id="2-Format-Chunk"><a href="#2-Format-Chunk" class="headerlink" title="2. Format Chunk"></a>2. Format Chunk</h3><pre><code>====================================================================
 |               |   Length  |              Content                 |
 ====================================================================
 | ID            |  4 Bytes  |   &apos;fmt &apos;                             |
@@ -266,8 +271,7 @@ struct FMT_BLOCK
     DWORD  dwFmtSize;
     WAVE_FORMAT wavFormat;
 };
-</code></pre><p>3.Fact Chunk</p>
-<pre><code>==================================
+</code></pre><h3 id="3-Fact-Chunk"><a href="#3-Fact-Chunk" class="headerlink" title="3. Fact Chunk"></a>3. Fact Chunk</h3><pre><code>==================================
 |       |  Length  |  Content    |
 ==================================
 | ID    |  4 Bytes |   &apos;fact&apos;    |
@@ -282,8 +286,7 @@ struct FMT_BLOCK
     char  szFactID[4]; // &apos;f&apos;,&apos;a&apos;,&apos;c&apos;,&apos;t&apos;
     DWORD  dwFactSize;
 };
-</code></pre><p>4.LIST Chunk</p>
-<pre><code>==================================
+</code></pre><h3 id="4-LIST-Chunk"><a href="#4-LIST-Chunk" class="headerlink" title="4. LIST Chunk"></a>4. LIST Chunk</h3><pre><code>==================================
 |       |  Length  |  Content    |
 ==================================
 | ID    |  4 Bytes |   &apos;LIST&apos;    |
@@ -319,8 +322,7 @@ struct LIST_BLOCK
     char  ChunkType[4];        // &apos;I&apos; &apos;N&apos; &apos;F&apos; &apos;O&apos;
     LIST_SUBCHUNK subChunk;    // 上面定义的结构体，大小为22字节
 };
-</code></pre><p>5.Data Chunk</p>
-<pre><code>==================================
+</code></pre><h3 id="5-Data-Chunk"><a href="#5-Data-Chunk" class="headerlink" title="5. Data Chunk"></a>5. Data Chunk</h3><pre><code>==================================
 |       |  Legnth  |   Content   |
 ==================================
 | ID    |  4 Bytes |   &apos;data&apos;    |
