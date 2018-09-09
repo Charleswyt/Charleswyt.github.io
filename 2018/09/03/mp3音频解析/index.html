@@ -241,8 +241,8 @@ char Flags[2]           // 标志帧，只定义了6 位
     x -- 压缩标志，设置时一个字节存放两个BCD 码表示数字
     y -- 加密标志
     z -- 组标志，设置时说明此帧和其他的某帧是一组
-</code></pre><h3 id="音频数据解析"><a href="#音频数据解析" class="headerlink" title="音频数据解析"></a>音频数据解析</h3><p>&ensp;&ensp;&ensp;&ensp;每个帧都有一个帧头，长度是四个字节，帧后面可能有2字节的CRC校验，取决于帧头的第16位，为0则无校验，为1则有校验，后面是可变长度的附加信息，对于标准的MP3文件来说，其长度是32字节，紧接其后的是压缩的声音数据，当解码器读到此处时就进行解码了。
-<img src="https://i.imgur.com/Kft3fR0.png" alt=""></p>
+</code></pre><h3 id="音频数据解析"><a href="#音频数据解析" class="headerlink" title="音频数据解析"></a>音频数据解析</h3><p>&ensp;&ensp;&ensp;&ensp;每个帧都有一个帧头，长度是四个字节，帧后面可能有2字节的CRC校验，取决于帧头的第16位，为0则无校验，为1则有校验，后面是可变长度的附加信息，对于标准的MP3文件来说，其长度是32字节，紧接其后的是压缩的声音数据，当解码器读到此处时就进行解码了。</p>
+<p><img src="https://i.imgur.com/Kft3fR0.png" alt=""></p>
 <h4 id="数据帧帧头"><a href="#数据帧帧头" class="headerlink" title="数据帧帧头"></a>数据帧帧头</h4><p> <img src="https://i.imgur.com/KHFA2Sv.png" alt=""></p>
 <pre><code>帧头长4字节，结构如下：
 typedef FrameHeader

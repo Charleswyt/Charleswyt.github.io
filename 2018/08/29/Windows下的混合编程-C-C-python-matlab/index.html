@@ -210,7 +210,8 @@
 </ul>
 </li>
 <li>在链接器-&gt;输入-&gt;附加依赖项添加”python35.lib”(根据python版本自行修改)</li>
-<li>新建一个cpp文件，输入<strong>#include&lt;python.h&gt;</strong>，若不报错则配置完成<br>具体用法可参考<a href="https://docs.python.org/3/extending/index.html#extending-index" target="_blank" rel="noopener">Extending and Embedding the Python Interpreter</a></li>
+<li>新建一个cpp文件，输入<strong>#include&lt;python.h&gt;</strong>，若不报错则配置完成
+具体用法可参考<a href="https://docs.python.org/3/extending/index.html#extending-index" target="_blank" rel="noopener">Extending and Embedding the Python Interpreter</a></li>
 </ol>
 <h2 id="C-C-调用Matlab"><a href="#C-C-调用Matlab" class="headerlink" title="C/C++调用Matlab"></a>C/C++调用Matlab</h2><ol>
 <li>下载matlab及对应的vs，并完成环境配置</li>
@@ -334,7 +335,9 @@ arr = rand(10, 10);
 rows = [1, 3];
 cols = [2, 4];
 [rarr, rdims] = main(arr, rows, cols);
-</code></pre><h2 id="Matlab调用Python"><a href="#Matlab调用Python" class="headerlink" title="Matlab调用Python"></a>Matlab调用Python</h2><p>&ensp;&ensp;&ensp;&ensp;Matlab本身提供了对python的接口，直接在Matlab命令行窗口输入”pyversion”即可查看matlab关联的python，如下图所示<br><img src="https://i.imgur.com/OOobGjj.png" alt=""><br>具体调用可参考<a href="https://ww2.mathworks.cn/help/matlab/matlab_external/call-python-from-matlab.html" target="_blank" rel="noopener">从 MATLAB 调用 Python</a></p>
+</code></pre><h2 id="Matlab调用Python"><a href="#Matlab调用Python" class="headerlink" title="Matlab调用Python"></a>Matlab调用Python</h2><p>&ensp;&ensp;&ensp;&ensp;Matlab本身提供了对python的接口，直接在Matlab命令行窗口输入”pyversion”即可查看matlab关联的python，如下图所示
+<img src="https://i.imgur.com/OOobGjj.png" alt="">
+具体调用可参考<a href="https://ww2.mathworks.cn/help/matlab/matlab_external/call-python-from-matlab.html" target="_blank" rel="noopener">从 MATLAB 调用 Python</a></p>
 
 
                 

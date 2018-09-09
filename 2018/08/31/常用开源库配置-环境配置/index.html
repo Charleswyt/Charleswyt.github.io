@@ -26,7 +26,8 @@ opencv
 ffmpeg
 …
 
-配置说明本机环境配置为win10 + vs2015 + Release + x64,其他用户需根据个人情况自行调整配置过程中主要关注各开源库中in"/>
+配置说明本机环境配置为win10 + vs2015 + Release + x64,其他用户需根据个人情况自行调整
+配置过程中主要关注各开源库中i"/>
     
 
     <!--Author-->
@@ -54,7 +55,8 @@ opencv
 ffmpeg
 …
 
-配置说明本机环境配置为win10 + vs2015 + Release + x64,其他用户需根据个人情况自行调整配置过程中主要关注各开源库中in"/>
+配置说明本机环境配置为win10 + vs2015 + Release + x64,其他用户需根据个人情况自行调整
+配置过程中主要关注各开源库中i"/>
     
 
     <!--Open Graph Site Name-->
@@ -232,7 +234,10 @@ ffmpeg
 <li><a href="https://ffmpeg.zeranoe.com/builds/" target="_blank" rel="noopener">ffmpeg</a></li>
 <li>…</li>
 </ul>
-<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><p>本机环境配置为<strong>win10</strong> + <strong>vs2015</strong> + <strong>Release</strong> + <strong>x64</strong>,其他用户需根据个人情况自行调整<br>配置过程中主要关注各开源库中include及libs的路径<br>注意：环境配置需注意配置(Debug/Release)和平台(x86/x64的选择)<br>dll库的环境配置：</p>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><p>本机环境配置为<strong>win10</strong> + <strong>vs2015</strong> + <strong>Release</strong> + <strong>x64</strong>,其他用户需根据个人情况自行调整
+配置过程中主要关注各开源库中include及libs的路径
+注意：环境配置需注意配置(Debug/Release)和平台(x86/x64的选择)
+dll库的环境配置：</p>
 <ol>
 <li>将dll拷贝至当前exe所在目录</li>
 <li>调试-&gt;环境，添加PATH=***,***为dll文件所在路径，非dll文件的路径，且路径不包含空格</li>
@@ -245,7 +250,10 @@ ffmpeg
 <li>在链接器-&gt;输入-&gt;附加依赖项添加”lapack_win64_MT.lib”和”blas_win64_MT.lib”</li>
 </ul>
 </li>
-<li>新建一个cpp文件，输入<br> <strong>#include \&lt;armadillo></strong><br> <strong>using namespace arma;</strong><br>若不报错则配置完成</li>
+<li>新建一个cpp文件，输入
+ <strong>#include \&lt;armadillo></strong>
+ <strong>using namespace arma;</strong>
+若不报错则配置完成</li>
 </ol>
 <h3 id="opencv-vs2015-图像及矩阵处理"><a href="#opencv-vs2015-图像及矩阵处理" class="headerlink" title="opencv + vs2015(图像及矩阵处理)"></a>opencv + vs2015(图像及矩阵处理)</h3><ol>
 <li>下载所需版本的opencv库并解压至指定目录</li>
@@ -282,7 +290,10 @@ ffmpeg
 </ol>
 <h3 id="zlib-vs2015-压缩"><a href="#zlib-vs2015-压缩" class="headerlink" title="zlib + vs2015(压缩)"></a>zlib + vs2015(压缩)</h3><ol>
 <li>下载所需版本的zlib库并解压至指定目录</li>
-<li>若进行32位编译：进入***\contrib\masmx86目录，运行bld_ml32.bat脚本<br>若进行64位编译：进入***\contrib\masmx64目录，运行bld_ml64.bat脚本(***为zlib根目录)<br>如果双击运行脚本未生成新文件，找到ml.exe(x86)或ml64.exe(x64)，复制至当前路径，双击bat脚本即可完成编译<br>运行完成删除ml(64).exe文件即可(可选)</li>
+<li>若进行32位编译：进入***\contrib\masmx86目录，运行bld_ml32.bat脚本
+若进行64位编译：进入***\contrib\masmx64目录，运行bld_ml64.bat脚本(***为zlib根目录)
+如果双击运行脚本未生成新文件，找到ml.exe(x86)或ml64.exe(x64)，复制至当前路径，双击bat脚本即可完成编译
+运行完成删除ml(64).exe文件即可(可选)</li>
 <li>进入***\contrib\vstudio\vc14目录，打开zlibvc.sln并完成编译(平台类型(x86/x64)需和步骤2一致)</li>
 <li>进入***\contrib\vstudio\vc14\x86\ZlibDllRelease或***\contrib\vstudio\vc14\x64\ZlibDllRelease添加至VC++的库目录</li>
 <li>在链接器-&gt;输入-&gt;附加依赖项添加”zlibwapi.lib”</li>
