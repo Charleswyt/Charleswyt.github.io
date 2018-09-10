@@ -14,6 +14,7 @@
 
     
         <meta name="description" content="安装步骤
+
 环境搭建(Node.js, git以及ruby，若配置成功则界面如下：
 
 
@@ -22,9 +23,10 @@
 
 
 
+
 输入npm install hexo -g完成hexo的安装，安装界面如下
 
-成功安装后输入he"/>
+成功安装后输入"/>
     
 
     <!--Author-->
@@ -40,6 +42,7 @@
     <!--Open Graph Description-->
     
         <meta property="og:description" content="安装步骤
+
 环境搭建(Node.js, git以及ruby，若配置成功则界面如下：
 
 
@@ -48,9 +51,10 @@
 
 
 
+
 输入npm install hexo -g完成hexo的安装，安装界面如下
 
-成功安装后输入he"/>
+成功安装后输入"/>
     
 
     <!--Open Graph Site Name-->
@@ -215,21 +219,24 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
+                <h1 id="安装步骤"><a class="markdownIt-Anchor" href="#安装步骤"></a> 安装步骤</h1>
+<ol>
 <li>环境搭建(<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>, <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git</a>以及<a href="https://www.ruby-lang.org/en/" target="_blank" rel="noopener">ruby</a>，若配置成功则界面如下：</li>
 </ol>
 <p><img src="https://i.imgur.com/ceJaJVI.png" alt=""></p>
 <ol start="2">
-<li>完成github账户创建与设置，创建repository并命名为：帐户名.github.io，其他设置如下：</li>
+<li>完成github账户创建与设置，创建repository并命名为：<a href="http://xn--eqrv6uend.github.io" target="_blank" rel="noopener">帐户名.github.io</a>，其他设置如下：</li>
 </ol>
 <p><img src="https://i.imgur.com/E8cGLJ9.png" alt=""></p>
 <ol start="3">
-<li><p>输入npm install hexo -g完成hexo的安装，安装界面如下</p>
-<p><img src="https://i.imgur.com/YT4ftEv.png" alt="">
+<li>
+<p>输入npm install hexo -g完成hexo的安装，安装界面如下</p>
+<p><img src="https://i.imgur.com/YT4ftEv.png" alt=""><br>
 成功安装后输入hexo -v可得到如下界面：</p>
 <p><img src="https://i.imgur.com/FBr6V13.png" alt=""></p>
 </li>
-<li><p>cd至指定目录(空目录)，输入hexo init，完成该文件夹的初始化</p>
+<li>
+<p>cd至指定目录(空目录)，输入hexo init，完成该文件夹的初始化</p>
 </li>
 </ol>
 <p><img src="https://i.imgur.com/ERTCN9p.png" alt=""></p>
@@ -242,19 +249,19 @@
 </ol>
 <p><img src="https://i.imgur.com/TAyxAdL.png" alt=""></p>
 <ol start="7">
-<li>输入hexo s，开启服务器，访问<a href="http://localhost:4000/，若页面一直无法跳转，说明端口可能被占用，此时同时按下ctrl+c停止服务器，输入&quot;hexo" target="_blank" rel="noopener">http://localhost:4000/，若页面一直无法跳转，说明端口可能被占用，此时同时按下ctrl+c停止服务器，输入&quot;hexo</a> server -p 端口号”来改变端口号</li>
+<li>输入hexo s，开启服务器，访问http://localhost:4000/，若页面一直无法跳转，说明端口可能被占用，此时同时按下ctrl+c停止服务器，输入&quot;hexo server -p 端口号&quot;来改变端口号</li>
 </ol>
-<p><img src="https://i.imgur.com/w84KtsC.png" alt="">
+<p><img src="https://i.imgur.com/w84KtsC.png" alt=""><br>
 <img src="https://i.imgur.com/XCU7tPw.png" alt=""></p>
 <ol start="8">
 <li>进入Git Bash，cd至步骤4所指定目录，如下键入以下命令：</li>
 </ol>
 <p><img src="https://i.imgur.com/BLacLP7.png" alt=""></p>
 <ol start="9">
-<li>连续输入以下两个命令：
- cd ~/.ssh
- ssh-keygen -t rsa -C “your_github_email”
- 连续三个回车，生成密钥，得到两个id_rsa和id_rsa.pub两个文件</li>
+<li>连续输入以下两个命令：<br>
+cd ~/.ssh<br>
+ssh-keygen -t rsa -C “your_github_email”<br>
+连续三个回车，生成密钥，得到两个id_rsa和id_rsa.pub两个文件</li>
 </ol>
 <p><img src="https://i.imgur.com/kYxgrq8.png" alt=""></p>
 <ol start="10">
@@ -262,13 +269,13 @@
 </ol>
 <p><img src="https://i.imgur.com/YdVxAKg.png" alt=""></p>
 <ol start="11">
-<li>登录github，点击头像下方的settings，选择SSH and GPG keys，将~./ssh路径下的id_ras.pub内的key复制到key中
+<li>登录github，点击头像下方的settings，选择SSH and GPG keys，将~./ssh路径下的id_ras.pub内的key复制到key中<br>
 <img src="https://i.imgur.com/SGtMfSG.png" alt=""></li>
-<li>输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了
+<li>输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了<br>
 <img src="https://i.imgur.com/4Pwc0jE.png" alt=""></li>
-<li>在步骤4建立的文件夹中找到<strong>_config.yml</strong>，按照下图完成配置
+<li>在步骤4建立的文件夹中找到**_config.yml**，按照下图完成配置<br>
 <img src="https://i.imgur.com/mFcvSaf.png" alt=""></li>
-<li>输入npm install hexo-deployer-git –save安装扩展
+<li>输入npm install hexo-deployer-git --save安装扩展<br>
 <img src="https://i.imgur.com/EwCZJWe.png" alt=""></li>
 <li>输入hexo new post “博客名”，新建一篇博客</li>
 </ol>

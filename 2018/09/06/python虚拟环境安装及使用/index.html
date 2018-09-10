@@ -13,15 +13,11 @@
     
 
     
-        <meta name="description" content="处理流程
+        <meta name="description" content="虚拟环境概述
+    虚拟环境是一个将不同项目所需求的依赖分别放在独立的地方的一个工具，它给这些工程创建虚拟的python环境。它解决了“项目X依赖于版本1.x，而项目Y需要项目4.x”的两难问题，而且使你的全局site-packages目录保持干净和可管理。
+ virtualenv的安装及使用
 
-把RGB图像转换到HSV空间
-取背景的一小块20*20，计算蓝色背景的平均色调和饱和度
-设置阈值，取出蓝色背景替换为红色背景
-把HSV图像转换会RGB空间
-滤波器去除边缘效应
-
- HSV颜色空间"/>
+"/>
     
 
     <!--Author-->
@@ -31,20 +27,16 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="基于opencv + python的证件照底色更换"/>
+        <meta property="og:title" content="python虚拟环境安装及使用"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="处理流程
+        <meta property="og:description" content="虚拟环境概述
+    虚拟环境是一个将不同项目所需求的依赖分别放在独立的地方的一个工具，它给这些工程创建虚拟的python环境。它解决了“项目X依赖于版本1.x，而项目Y需要项目4.x”的两难问题，而且使你的全局site-packages目录保持干净和可管理。
+ virtualenv的安装及使用
 
-把RGB图像转换到HSV空间
-取背景的一小块20*20，计算蓝色背景的平均色调和饱和度
-设置阈值，取出蓝色背景替换为红色背景
-把HSV图像转换会RGB空间
-滤波器去除边缘效应
-
- HSV颜色空间"/>
+"/>
     
 
     <!--Open Graph Site Name-->
@@ -71,7 +63,7 @@
 
     <!-- Title -->
     
-    <title>基于opencv + python的证件照底色更换 - Home</title>
+    <title>python虚拟环境安装及使用 - Home</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -159,11 +151,7 @@
 </nav>
 
     <!-- Main Content -->
-    
-
-
-    <section class="main">
-        <!-- Page Header -->
+    <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
 <header class="intro-header" style="background-image: url('https://i.imgur.com/klm5KIH.jpg')">
@@ -171,13 +159,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>基于opencv + python的证件照底色更换</h1>
+                    <h1>python虚拟环境安装及使用</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2018-09-07
+                            2018-09-06
                         
                     </span>
                 </div>
@@ -193,21 +181,77 @@
 
             <!-- Tags and categories -->
            
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/python/">#python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="处理流程"><a class="markdownIt-Anchor" href="#处理流程"></a> 处理流程</h2>
+                <h2 id="虚拟环境概述"><a class="markdownIt-Anchor" href="#虚拟环境概述"></a> 虚拟环境概述</h2>
+<p>    虚拟环境是一个将不同项目所需求的依赖分别放在独立的地方的一个工具，它给这些工程创建虚拟的python环境。它解决了“项目X依赖于版本1.x，而项目Y需要项目4.x”的两难问题，而且使你的全局site-packages目录保持干净和可管理。</p>
+<h3 id="virtualenv的安装及使用"><a class="markdownIt-Anchor" href="#virtualenv的安装及使用"></a> virtualenv的安装及使用</h3>
 <ol>
-<li>把RGB图像转换到HSV空间</li>
-<li>取背景的一小块20*20，计算蓝色背景的平均色调和饱和度</li>
-<li>设置阈值，取出蓝色背景替换为红色背景</li>
-<li>把HSV图像转换会RGB空间</li>
-<li>滤波器去除边缘效应</li>
+<li>使用pip完成virtualenv的安装<br>
+pip install virtualenv</li>
+<li>为一个工程创建一个虚拟环境<br>
+cd “path of your project”               # cd至工程目录<br>
+# 使用默认python版本完成虚拟环境创建<br>
+virtualenv venv                         # 创建虚拟环境(vnev为虚拟环境名，可随意修改)<br>
+# 使用指定的python版本完成虚拟环境创建<br>
+mkvirtualenv --python=“path of python”  # python路径中不能包含空格<br>
+cd “path of activate”                   # cd至activate所在目录(venv/Scripts)<br>
+activate                                # 激活虚拟环境<br>
+“run…”                                # 完成各项操作<br>
+deactivate                              # 退出虚拟环境</li>
+<li>requirements.txt使用<br>
+pip freeze &gt; requirements.txt           # 将pip包保存至requirments.txt以便后续使用<br>
+pip install -r requirements.txt         # 安装所需pip包</li>
 </ol>
-<h2 id="hsv颜色空间"><a class="markdownIt-Anchor" href="#hsv颜色空间"></a> HSV颜色空间</h2>
+<h3 id="virtualenvwrapper-win的安装及使用"><a class="markdownIt-Anchor" href="#virtualenvwrapper-win的安装及使用"></a> virtualenvwrapper-win的安装及使用</h3>
+<p>    virtualenvwrapper-win提供windows了一系列命令使得和虚拟环境工作变得愉快许多，将所有的虚拟环境都放在一个路径下。</p>
+<ol>
+<li>使用pip完成virtualenvwrapper-win的安装<br>
+pip install virtualenvwrapper-win</li>
+<li>完成虚拟环境创建<br>
+# 使用默认python版本完成虚拟环境创建<br>
+mkvirtualenv venv                       # 环境目录路径为系统默认路径, C:\Users\Administrator\Envs\venv, 创建后自动激活虚拟环境<br>
+# 使用指定的python版本完成虚拟环境创建<br>
+mkvirtualenv --python=“path of python”  # python路径中不能包含空格<br>
+workon                                  # 查看Envs目录下所有虚拟环境变量<br>
+“run…”                                # 完成各项操作<br>
+deactivate                              # 退出当前虚拟环境</li>
+</ol>
+<h3 id="使用anaconda完成虚拟环境的安装及使用"><a class="markdownIt-Anchor" href="#使用anaconda完成虚拟环境的安装及使用"></a> 使用Anaconda完成虚拟环境的安装及使用</h3>
+<ol>
+<li>完成Anaconda的安装与环境配置</li>
+<li>打开命令行完成以下操作<br>
+conda create -n venv python=3           # vnev为虚拟环境名，python=3选定python版本<br>
+activate venv                           # 激活虚拟环境<br>
+“run…”                                # 完成各项操作<br>
+deactivate venv                         # 退出虚拟环境<br>
+conda remove -n venv --all              # 删除虚拟环境</li>
+<li>注：在anaconda环境下安装</li>
+</ol>
+<h3 id="使用pycharm完成虚拟环境的安装及使用"><a class="markdownIt-Anchor" href="#使用pycharm完成虚拟环境的安装及使用"></a> 使用pycharm完成虚拟环境的安装及使用</h3>
+<ol>
+<li>完成pycharm的安装(学生账户可以免费使用专业版)</li>
+<li>创建工程并完成项目配置<br>
+<img src="https://i.imgur.com/a9w0o52.jpg" alt=""></li>
+</ol>
 
 
                 
@@ -224,12 +268,6 @@
         </div>
     </div>
 </article>
-    </section>
-
-
-
-
-
 
     <!-- Footer -->
     <hr />

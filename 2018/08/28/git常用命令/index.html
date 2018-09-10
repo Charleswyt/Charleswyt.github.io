@@ -13,9 +13,14 @@
     
 
     
-        <meta name="description" content="Git 常用命令速查表master：默认开发分支Head：默认开发分支origin：默认远程版本库Head^：Head的父提交  
-创建版本库$ git clone &amp;lt;url&amp;gt;                          # 克隆远程版本库   
-$ git init       "/>
+        <meta name="description" content="Git 常用命令速查表
+master：默认开发分支
+Head：默认开发分支
+origin：默认远程版本库
+Head^：Head的父提交
+ 创建版本库
+$ git clone &amp;lt;url&amp;gt;                          # 克隆远程版本库   
+$ git init   "/>
     
 
     <!--Author-->
@@ -30,9 +35,14 @@ $ git init       "/>
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="Git 常用命令速查表master：默认开发分支Head：默认开发分支origin：默认远程版本库Head^：Head的父提交  
-创建版本库$ git clone &amp;lt;url&amp;gt;                          # 克隆远程版本库   
-$ git init       "/>
+        <meta property="og:description" content="Git 常用命令速查表
+master：默认开发分支
+Head：默认开发分支
+origin：默认远程版本库
+Head^：Head的父提交
+ 创建版本库
+$ git clone &amp;lt;url&amp;gt;                          # 克隆远程版本库   
+$ git init   "/>
     
 
     <!--Open Graph Site Name-->
@@ -183,10 +193,17 @@ $ git init       "/>
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="Git-常用命令速查表"><a href="#Git-常用命令速查表" class="headerlink" title="Git 常用命令速查表"></a>Git 常用命令速查表</h1><p><strong>master</strong>：默认开发分支<br><strong>Head</strong>：默认开发分支<br><strong>origin</strong>：默认远程版本库<br><strong>Head^</strong>：Head的父提交  </p>
-<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><pre><code>$ git clone &lt;url&gt;                          # 克隆远程版本库   
+                <h1 id="git-常用命令速查表"><a class="markdownIt-Anchor" href="#git-常用命令速查表"></a> Git 常用命令速查表</h1>
+<p><strong>master</strong>：默认开发分支<br>
+<strong>Head</strong>：默认开发分支<br>
+<strong>origin</strong>：默认远程版本库<br>
+<strong>Head^</strong>：Head的父提交</p>
+<h2 id="创建版本库"><a class="markdownIt-Anchor" href="#创建版本库"></a> 创建版本库</h2>
+<pre><code>$ git clone &lt;url&gt;                          # 克隆远程版本库   
 $ git init                                 # 初始化本地版本库
-</code></pre><h2 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h2><pre><code>$ git status                               # 查看状态
+</code></pre>
+<h2 id="修改和提交"><a class="markdownIt-Anchor" href="#修改和提交"></a> 修改和提交</h2>
+<pre><code>$ git status                               # 查看状态
 $ git diff                                 # 查看变更内容
 $ git add                                  # 跟踪所有改动过的文件
 $ git add &lt;file&gt;                           # 跟踪指定的文件
@@ -195,22 +212,32 @@ $ git rm &lt;file&gt;                            # 删除文件
 $ git rm --cachaed &lt;file&gt;                  # 停止跟踪但不删除
 $ git commit -m &quot;commit message&quot;           # 提交所有更新过的文件
 $ git commit -amend                        # 修改最后一次提交
-</code></pre><h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><pre><code>$ git log                                  # 查看提交历史
+</code></pre>
+<h2 id="查看提交历史"><a class="markdownIt-Anchor" href="#查看提交历史"></a> 查看提交历史</h2>
+<pre><code>$ git log                                  # 查看提交历史
 $ git log -p &lt;file&gt;                        # 查看指定文件的提交历史
 $ git blame &lt;file&gt;                         # 以列表方式查看指定文件的提交历史
-</code></pre><h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><pre><code>$ git reset --hard HEAD                    # 撤销工作目录中所有未提交文件的修改内容
+</code></pre>
+<h2 id="撤销"><a class="markdownIt-Anchor" href="#撤销"></a> 撤销</h2>
+<pre><code>$ git reset --hard HEAD                    # 撤销工作目录中所有未提交文件的修改内容
 $ git checkout HEAD &lt;file&gt;                 # 撤销指定的为提交文件的修改内容
 $ git revert &lt;commit&gt;                      # 撤销指定的提交
-</code></pre><h2 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h2><pre><code>$ git branch                               # 显示所有本地分支
+</code></pre>
+<h2 id="分支与标签"><a class="markdownIt-Anchor" href="#分支与标签"></a> 分支与标签</h2>
+<pre><code>$ git branch                               # 显示所有本地分支
 $ git checkout &lt;branch/tag&gt;                # 切换到指定分支或标签
 $ git branch &lt;new-branch&gt;                  # 创建新分支
 $ git branch -d &lt;branch&gt;                   # 删除本地分支
 $ git tag                                  # 列出所有本地标签
 $ git tag &lt;tagname&gt;                        # 基于最新提交创建标签
 $ git tag -d &lt;tagname&gt;                     # 删除标签
-</code></pre><h2 id="合并与衍合"><a href="#合并与衍合" class="headerlink" title="合并与衍合"></a>合并与衍合</h2><pre><code>$ git merge &lt;branch&gt;                       # 合并指定分支到当前分支
+</code></pre>
+<h2 id="合并与衍合"><a class="markdownIt-Anchor" href="#合并与衍合"></a> 合并与衍合</h2>
+<pre><code>$ git merge &lt;branch&gt;                       # 合并指定分支到当前分支
 $ git rebase &lt;branch&gt;                      # 衍合指定分支到当前分支
-</code></pre><h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><pre><code>$ git remote -v                            # 查看远程版本库信息
+</code></pre>
+<h2 id="远程操作"><a class="markdownIt-Anchor" href="#远程操作"></a> 远程操作</h2>
+<pre><code>$ git remote -v                            # 查看远程版本库信息
 $ git remote show &lt;remote&gt;                 # 查看指定远程版本库信息
 $ git remote add &lt;remote&gt; &lt;url&gt;            # 添加远程版本库
 $ git fetch &lt;remote&gt;                       # 从远程库获取代码
@@ -218,7 +245,8 @@ $ git pull &lt;remote&gt; &lt;branch&gt;               # 下载代码并快速�
 $ git push &lt;remote&gt; &lt;branch&gt;               # 上传代码并快速合并
 $ git push &lt;remote&gt; :&lt;branch/tag-name&gt;     # 删除远程分支或标签
 $ git push --tags                          # 上传所有标签
-</code></pre><p><img src="http://i.imgur.com/dW8SVx8.jpg" alt=""></p>
+</code></pre>
+<p><img src="http://i.imgur.com/dW8SVx8.jpg" alt=""></p>
 
 
                 

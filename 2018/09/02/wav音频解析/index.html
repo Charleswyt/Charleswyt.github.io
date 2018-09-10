@@ -13,8 +13,9 @@
     
 
     
-        <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
-&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIF"/>
+        <meta name="description" content="WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
+    RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。
+    WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RI"/>
     
 
     <!--Author-->
@@ -29,8 +30,9 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
-&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIF"/>
+        <meta property="og:description" content="WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
+    RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。
+    WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RI"/>
     
 
     <!--Open Graph Site Name-->
@@ -195,48 +197,53 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>&ensp;&ensp;&ensp;&ensp;WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。
-&ensp;&ensp;&ensp;&ensp;RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。
-&ensp;&ensp;&ensp;&ensp;WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE, Chunk, Format Chunk, Fact Chunk(可选), LIST Chunk(可选), Data Chunk。</p>
+                <p>    WAVE文件作为多媒体中使用的声波文件格式之一，它是以RIFF格式为标准的。<br>
+    RIFF是英文Resource Interchange File Format的缩写，每个WAVE文件的头四个字节便是“RIFF”。<br>
+    WAVE文件是由若干个Chunk组成的。按照在文件中的出现位置包括：RIFF WAVE, Chunk, Format Chunk, Fact Chunk(可选), LIST Chunk(可选), Data Chunk。</p>
 <pre><code>具体见下图：
 ------------------------------------------------
 |               RIFF WAVE Chunk                |
-|               ID  = &apos;RIFF&apos;                   |
-|               RiffType = &apos;WAVE&apos;              |
+|               ID  = 'RIFF'                   |
+|               RiffType = 'WAVE'              |
 ------------------------------------------------
 |               Format Chunk                   |
-|                ID = &apos;fmt &apos;                   |
+|                ID = 'fmt '                   |
 ------------------------------------------------
 |            Fact Chunk(optional)              |
-|                 ID = &apos;fact&apos;                  |
+|                 ID = 'fact'                  |
 ------------------------------------------------
 |             LIST Chunk(optional)             |
-|                 ID = &apos;LIST&apos;                  |
+|                 ID = 'LIST'                  |
 ------------------------------------------------
 |                 Data Chunk                   |
-|                 ID = &apos;data&apos;                  |
+|                 ID = 'data'                  |
 ------------------------------------------------
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;其中除了Fact Chunk和LIST Chunk外，其他三个Chunk是必须的。每个Chunk有各自的ID，位于Chunk最开始位置，作为标示，而且均为4个字节。并且紧跟在ID后面的是Chunk大小(去除ID和Size所占的字节数后剩下的其他字节数目)，4个字节表示，低字节表示数值低位，高字节表示数值高位。下面具体介绍各个Chunk内容。</p>
-<h3 id="1-RIFF-WAVE-Chunk"><a href="#1-RIFF-WAVE-Chunk" class="headerlink" title="1. RIFF WAVE Chunk"></a>1. RIFF WAVE Chunk</h3><pre><code>==================================
+</code></pre>
+<p>    其中除了Fact Chunk和LIST Chunk外，其他三个Chunk是必须的。每个Chunk有各自的ID，位于Chunk最开始位置，作为标示，而且均为4个字节。并且紧跟在ID后面的是Chunk大小(去除ID和Size所占的字节数后剩下的其他字节数目)，4个字节表示，低字节表示数值低位，高字节表示数值高位。下面具体介绍各个Chunk内容。</p>
+<h3 id="1-riff-wave-chunk"><a class="markdownIt-Anchor" href="#1-riff-wave-chunk"></a> 1. RIFF WAVE Chunk</h3>
+<pre><code>==================================
 |       |  Length  |   Content   |
 ==================================
-| ID    |  4 Bytes |   &apos;RIFF&apos;    |
+| ID    |  4 Bytes |   'RIFF'    |
 ----------------------------------
 | Size  |  4 Bytes |             |
 ----------------------------------
-| Type  |  4 Bytes |   &apos;WAVE&apos;    |
+| Type  |  4 Bytes |   'WAVE'    |
 ----------------------------------
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;以’FIFF’作为标示，然后紧跟着为size字段，该size是整个wav文件大小减去ID和Size所占用的字节数，即FileLen - 8 = Size。然后是Type字段，为’WAVE’，表示是wav文件。结构定义如下：</p>
+</code></pre>
+<p>    以’FIFF’作为标示，然后紧跟着为size字段，该size是整个wav文件大小减去ID和Size所占用的字节数，即FileLen - 8 = Size。然后是Type字段，为’WAVE’，表示是wav文件。结构定义如下：</p>
 <pre><code>struct RIFF_HEADER
 {
-    char  szRiffID[4];        // &apos;R&apos;,&apos;I&apos;,&apos;F&apos;,&apos;F&apos;
+    char  szRiffID[4];		// 'R','I','F','F'
     DWORD dwRiffSize;
-    char  szRiffFormat[4];    // &apos;W&apos;,&apos;A&apos;,&apos;V&apos;,&apos;E&apos;
+    char  szRiffFormat[4];	// 'W','A','V','E'
 };
-</code></pre><h3 id="2-Format-Chunk"><a href="#2-Format-Chunk" class="headerlink" title="2. Format Chunk"></a>2. Format Chunk</h3><pre><code>====================================================================
+</code></pre>
+<h3 id="2-format-chunk"><a class="markdownIt-Anchor" href="#2-format-chunk"></a> 2. Format Chunk</h3>
+<pre><code>====================================================================
 |               |   Length  |              Content                 |
 ====================================================================
-| ID            |  4 Bytes  |   &apos;fmt &apos;                             |
+| ID            |  4 Bytes  |   'fmt '                             |
 --------------------------------------------------------------------
 | Size          |  4 Bytes  | 16 or 18, if 18, there is padding    |
 --------------------------------------------------------------------
@@ -254,7 +261,8 @@
 --------------------------------------------------------------------
 |               |  2 Bytes  | padding (optional)                   | 
 --------------------------------------------------------------------
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;以’fmt ‘作为标示。一般情况下Size为16，此时最后附加信息没有；如果为18则最后多了2个字节的附加信息。主要由一些软件制成的wav格式中含有该2个字节的附加信息。结构定义如下：</p>
+</code></pre>
+<p>    以’fmt '作为标示。一般情况下Size为16，此时最后附加信息没有；如果为18则最后多了2个字节的附加信息。主要由一些软件制成的wav格式中含有该2个字节的附加信息。结构定义如下：</p>
 <pre><code>struct WAVE_FORMAT
 {
     WORD wFormatTag;
@@ -267,71 +275,81 @@
 
 struct FMT_BLOCK
 {
-    char  szFmtID[4]; // &apos;f&apos;,&apos;m&apos;,&apos;t&apos;,&apos; &apos;
+    char  szFmtID[4]; // 'f','m','t',' '
     DWORD  dwFmtSize;
     WAVE_FORMAT wavFormat;
 };
-</code></pre><h3 id="3-Fact-Chunk"><a href="#3-Fact-Chunk" class="headerlink" title="3. Fact Chunk"></a>3. Fact Chunk</h3><pre><code>==================================
+</code></pre>
+<h3 id="3-fact-chunk"><a class="markdownIt-Anchor" href="#3-fact-chunk"></a> 3. Fact Chunk</h3>
+<pre><code>==================================
 |       |  Length  |  Content    |
 ==================================
-| ID    |  4 Bytes |   &apos;fact&apos;    |
+| ID    |  4 Bytes |   'fact'    |
 ----------------------------------
 | Size  |  4 Bytes |   数值为4    |
 ----------------------------------
 | data  |  4 Bytes |             |
 ----------------------------------
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;Fact Chunk是可选字段，一般当wav文件由某些软件转化而成，则包含该Chunk。结构定义如下：</p>
+</code></pre>
+<p>    Fact Chunk是可选字段，一般当wav文件由某些软件转化而成，则包含该Chunk。结构定义如下：</p>
 <pre><code>struct FACT_BLOCK
 {
-    char  szFactID[4]; // &apos;f&apos;,&apos;a&apos;,&apos;c&apos;,&apos;t&apos;
+    char  szFactID[4]; // 'f','a','c','t'
     DWORD  dwFactSize;
 };
-</code></pre><h3 id="4-LIST-Chunk"><a href="#4-LIST-Chunk" class="headerlink" title="4. LIST Chunk"></a>4. LIST Chunk</h3><pre><code>==================================
-|       |  Length  |  Content    |
-==================================
-| ID    |  4 Bytes |   &apos;LIST&apos;    |
-----------------------------------
-| Size  |  4 Bytes |             |
-----------------------------------
-| Type  |  4 Bytes |   &apos;INFO&apos;    |
-----------------------------------
-|         Sub LIST Chunk         |
-----------------------------------
-</code></pre><p>Sub LIST Chunk</p>
+</code></pre>
+<h3 id="4-list-chunk"><a class="markdownIt-Anchor" href="#4-list-chunk"></a> 4. LIST Chunk</h3>
 <pre><code>==================================
 |       |  Length  |  Content    |
 ==================================
-| ID    |  4 Bytes |   &apos;ISFT&apos;    |
+| ID    |  4 Bytes |   'LIST'    |
+----------------------------------
+| Size  |  4 Bytes |             |
+----------------------------------
+| Type  |  4 Bytes |   'INFO'    |
+----------------------------------
+|         Sub LIST Chunk         |
+----------------------------------
+</code></pre>
+<p>Sub LIST Chunk</p>
+<pre><code>==================================
+|       |  Length  |  Content    |
+==================================
+| ID    |  4 Bytes |   'ISFT'    |
 ----------------------------------
 | Size  |  4 Bytes |             |
 ----------------------------------
 | Data  | 14 Bytes |             |
 ----------------------------------
-</code></pre><p>结构定义如下：</p>
+</code></pre>
+<p>结构定义如下：</p>
 <pre><code>struct LIST_SUBCHUNK
 {
-    char  ChunkID[4];        // &apos;I&apos; &apos;S&apos; &apos;F&apos; &apos;T&apos;
+    char  ChunkID[4];		// 'I' 'S' 'F' 'T'
     DWORD dwSubChunkSize;
     char  ListData[14];
 };
 
 struct LIST_BLOCK
 {
-    char  szLishID[4];        // &apos;L&apos; &apos;I&apos; &apos;S&apos; &apos;T&apos;
-    DWORD dwListSize;        // List Chunk的大小
-    char  ChunkType[4];        // &apos;I&apos; &apos;N&apos; &apos;F&apos; &apos;O&apos;
-    LIST_SUBCHUNK subChunk;    // 上面定义的结构体，大小为22字节
+    char  szLishID[4];		// 'L' 'I' 'S' 'T'
+    DWORD dwListSize;		// List Chunk的大小
+    char  ChunkType[4];		// 'I' 'N' 'F' 'O'
+    LIST_SUBCHUNK subChunk;	// 上面定义的结构体，大小为22字节
 };
-</code></pre><h3 id="5-Data-Chunk"><a href="#5-Data-Chunk" class="headerlink" title="5. Data Chunk"></a>5. Data Chunk</h3><pre><code>==================================
+</code></pre>
+<h3 id="5-data-chunk"><a class="markdownIt-Anchor" href="#5-data-chunk"></a> 5. Data Chunk</h3>
+<pre><code>==================================
 |       |  Legnth  |   Content   |
 ==================================
-| ID    |  4 Bytes |   &apos;data&apos;    |
+| ID    |  4 Bytes |   'data'    |
 ----------------------------------
 | Size  |  4 Bytes |             |
 ----------------------------------
 | data  |          |             |
 ----------------------------------
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;Data Chunk是真正保存wav数据的地方，以’data’作为该Chunk的标示。然后是数据的大小。紧接着就是wav数据。根据Format Chunk中的声道数以及采样bit数，wav数据的bit位置可以分成以下几种形式：</p>
+</code></pre>
+<p>    Data Chunk是真正保存wav数据的地方，以’data’作为该Chunk的标示。然后是数据的大小。紧接着就是wav数据。根据Format Chunk中的声道数以及采样bit数，wav数据的bit位置可以分成以下几种形式：</p>
 <pre><code>----------------------------------------------------------------------------------------
 |  mono   |    sampling 1    |    sampling 2    |    sampling 3    |    sampling 4     |
 |         |-----------------------------------------------------------------------------
@@ -351,13 +369,15 @@ struct LIST_BLOCK
 |  16bit  | channel 0(left)  | channel 1(right) | channel 0 (left) |  channel 1(right) |
 |         |     (low)        |      (high)      |     (low)        |      (high)       |
 ----------------------------------------------------------------------------------------
-</code></pre><p>结构定义如下：</p>
+</code></pre>
+<p>结构定义如下：</p>
 <pre><code>struct DATA_BLOCK
 {
-    char szDataID[4]; // &apos;d&apos;,&apos;a&apos;,&apos;t&apos;,&apos;a&apos;
+    char szDataID[4]; // 'd','a','t','a'
     DWORD dwDataSize;
 };
 </code></pre>
+
 
                 
             </div>
