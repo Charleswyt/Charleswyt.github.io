@@ -13,6 +13,9 @@
     
 
     
+        <meta name="description" content="虚拟环境概述&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;虚拟环境是一个将不同项目所需求的依赖分别放在独立的地方的一个工具，它给这些工程创建虚拟的python环境。它解决了“项目X依赖于版本1.x，而项目Y需要项目4.x”的两难问题，而且使你的全局site-packages目录保持干净和可管理。
+"/>
+    
 
     <!--Author-->
     
@@ -21,10 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Home"/>
+        <meta property="og:title" content="python虚拟环境安装及使用"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="虚拟环境概述&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;虚拟环境是一个将不同项目所需求的依赖分别放在独立的地方的一个工具，它给这些工程创建虚拟的python环境。它解决了“项目X依赖于版本1.x，而项目Y需要项目4.x”的两难问题，而且使你的全局site-packages目录保持干净和可管理。
+"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>page - Blog - Home</title>
+    <title>python虚拟环境安装及使用 - Home</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -139,90 +145,114 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://i.imgur.com/klm5KIH.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Blog</h1>
+                <div class="post-heading">
+                    <h1>python虚拟环境安装及使用</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-09-10
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/python/">#python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/30/lib库和dll库解析/">
-        <h1 class="post-title archive">
-            lib库和dll库辨析
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-30
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/08/29/Windows下的混合编程-C-C-python-matlab/">
-        <h1 class="post-title archive">
-            Windows下的混合编程(C/C++, python, matlab)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-29
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="虚拟环境概述"><a href="#虚拟环境概述" class="headerlink" title="虚拟环境概述"></a>虚拟环境概述</h2><p>&ensp;&ensp;&ensp;&ensp;虚拟环境是一个将不同项目所需求的依赖分别放在独立的地方的一个工具，它给这些工程创建虚拟的python环境。它解决了“项目X依赖于版本1.x，而项目Y需要项目4.x”的两难问题，而且使你的全局site-packages目录保持干净和可管理。</p>
+<h3 id="virtualenv的安装及使用"><a href="#virtualenv的安装及使用" class="headerlink" title="virtualenv的安装及使用"></a>virtualenv的安装及使用</h3><ol>
+<li>使用pip完成virtualenv的安装<pre><code>pip install virtualenv
+</code></pre></li>
+<li>为一个工程创建一个虚拟环境<pre><code>cd &quot;path of your project&quot;               # cd至工程目录
+# 使用默认python版本完成虚拟环境创建
+virtualenv venv                         # 创建虚拟环境(vnev为虚拟环境名，可随意修改)
+# 使用指定的python版本完成虚拟环境创建
+mkvirtualenv --python=&quot;path of python&quot;  # python路径中不能包含空格
+cd &quot;path of activate&quot;                   # cd至activate所在目录(venv/Scripts)
+activate                                # 激活虚拟环境
+&quot;run...&quot;                                # 完成各项操作
+deactivate                              # 退出虚拟环境
+</code></pre></li>
+<li>requirements.txt使用<pre><code>pip freeze &gt; requirements.txt           # 将pip包保存至requirments.txt以便后续使用
+pip install -r requirements.txt         # 安装所需pip包
+</code></pre></li>
+</ol>
+<h3 id="virtualenvwrapper-win的安装及使用"><a href="#virtualenvwrapper-win的安装及使用" class="headerlink" title="virtualenvwrapper-win的安装及使用"></a>virtualenvwrapper-win的安装及使用</h3><p>virtualenvwrapper-win提供windows了一系列命令使得和虚拟环境工作变得愉快许多，将所有的虚拟环境都放在一个路径下。</p>
+<ol>
+<li>使用pip完成virtualenvwrapper-win的安装<pre><code>pip install virtualenvwrapper-win
+</code></pre></li>
+<li>完成虚拟环境创建<pre><code># 使用默认python版本完成虚拟环境创建
+mkvirtualenv venv                       # 环境目录路径为系统默认路径, C:\Users\Administrator\Envs\venv, 创建后自动激活虚拟环境
+# 使用指定的python版本完成虚拟环境创建
+mkvirtualenv --python=&quot;path of python&quot;  # python路径中不能包含空格
+workon                                  # 查看Envs目录下所有虚拟环境变量
+&quot;run...&quot;                                # 完成各项操作
+deactivate                              # 退出当前虚拟环境
+</code></pre></li>
+</ol>
+<h3 id="使用Anaconda完成虚拟环境的安装及使用"><a href="#使用Anaconda完成虚拟环境的安装及使用" class="headerlink" title="使用Anaconda完成虚拟环境的安装及使用"></a>使用Anaconda完成虚拟环境的安装及使用</h3><ol>
+<li>完成Anaconda的安装与环境配置</li>
+<li>打开命令行完成以下操作<pre><code>conda create -n venv python=3           # vnev为虚拟环境名，python=3选定python版本
+activate venv                           # 激活虚拟环境
+&quot;run...&quot;                                # 完成各项操作
+deactivate venv                         # 退出虚拟环境
+conda remove -n venv --all              # 删除虚拟环境
+</code></pre></li>
+<li>注：在anaconda环境下安装</li>
+</ol>
+<h3 id="使用pycharm完成虚拟环境的安装及使用"><a href="#使用pycharm完成虚拟环境的安装及使用" class="headerlink" title="使用pycharm完成虚拟环境的安装及使用"></a>使用pycharm完成虚拟环境的安装及使用</h3><p><img src="https://i.imgur.com/a9w0o52.jpg" alt=""></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/08/28/git常用命令/">
-        <h1 class="post-title archive">
-            git常用命令
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-28
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/27/Win10-Hexo-github搭建个人博客/">
-        <h1 class="post-title archive">
-            Win10 + Hexo + github搭建个人博客
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-27
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/">&larr;  Previous</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
